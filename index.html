@@ -1,0 +1,1015 @@
+<!DOCTYPE HTML>
+
+<style>
+  #full {
+    display: none;
+  }
+</style>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Xiaofan Li | Shalfun Li</title>
+
+  <meta name="author" content="Xiaofan Li, Shalfun Li">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="assets/imgs/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="assets/imgs/favicon.png" />
+  <style>
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;
+    }
+
+    .navbar li {
+        float: left;
+    }
+
+    .navbar li a {
+        display: block;
+        color: #666;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .navbar li a:hover:not(.active) {
+        background-color: #ddd;
+    }
+
+    .navbar li a.active {
+        color: white;
+        background-color: #4CAF50;
+    }
+
+    .pub-filter-bar {
+        margin: 6px 0 14px 0;
+        line-height: 1.6;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px 8px;
+    }
+    .pub-filter-btn {
+        display: inline-block;
+        margin: 0;
+        padding: 5px 11px;
+        font-size: 13px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        color: #333;
+        cursor: pointer;
+        border-radius: 3px;
+        font-family: Lato, Verdana, Helvetica, sans-serif;
+    }
+    .pub-filter-btn:hover {
+        background: #eee;
+    }
+    .pub-filter-btn.active {
+        color: #fff;
+        background-color: #4CAF50;
+        border-color: #3d8b40;
+    }
+
+    .talk-item {
+        margin: 6px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.45em;
+        list-style: none;
+    }
+    .talk-item .talk-year {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+    .talk-item .talk-body {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+  </style>
+</head>
+
+<div class="navbar">
+    <ul>
+      <li><a class="active" href="index.html">Main Page</a></li>
+      <li><a href="#pubs">Publications</a></li>
+      <li style="float:right"><a href="#about">About</a></li>
+    </ul>
+</div>
+
+<body>
+  <table style="width:100%;max-width:min(1100px, 92vw);border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table>
+	<tbody>
+		<tr>
+  <td width="75%" style="padding-right: 20px;">
+    <div id="toptitle">
+      <h1>Xiaofan Li</h1>
+    </div>
+
+    <p>
+    I obtained my Bachelor's degree from Zhejiang University (ZJU), where I conducted research under the supervision of Professors <a href="https://person.zju.edu.cn/wangkaiwei">Kaiwei Wang</a>, <a href="https://person.zju.edu.cn/0009726">Guofeng Zhang</a>, and <a href="https://person.zju.edu.cn/en/0089108">Zhihai Xu</a>.
+    </p>
+    <p>
+    During my undergraduate studies, I started at <b>SenseTime</b>, working on computer vision with an emphasis on 2D/3D optical flow prediction.
+    </p>
+    <p>
+    Then, I joined the Joint Algorithm Department of <b>Rockchip & ZJU</b>, focusing on low-level vision and face-related algorithms, and led the open-sourcing of <a href="https://github.com/airockchip/rknn-toolkit2">RKNN</a> (⭐ ~3k).
+    </p>
+    <p>
+    At <b>Baidu</b>, I worked in the Autonomous Driving Foundation Model Department (ADFM) and oversaw the autonomous driving end-to-end fusion model as head of ADFM research, with work spanning 3D scene understanding, vision-language models, implicit rendering, 4D generation, and world models.
+    </p>
+    <p>
+    I am currently with <b>X Square Robot</b>, leading the research of the world unified model, where I continue exploring the intersection of generative models, large language models, and embodied intelligence. Please feel free to reach out if you're interested in joining.
+    </p>
+	    <!-- My research has been centered on open-set 3D spatial perception and planning, as well as unified multimodal models for understanding, perception, planning, and generation. -->
+    <p>
+      [<a href="mailto:shalfunnn@gmail.com" title="shalfunnn@gmail.com">Email</a>]
+      [<a href="https://github.com/shalfun">Github</a>]
+      [<a href="https://scholar.google.com/citations?user=pjZdkO4AAAAJ&hl=zh-CN">Google Scholar</a>]
+      [<a href="https://www.linkedin.com/in/%E6%99%93%E5%B8%86-%E6%9D%8E-294991291/details/experience/edit/forms/new">Linkedin</a>] <br/>
+    </p>
+  </td>
+
+<!--   <td width="25%">
+    <img src="assets/imgs/me.png" width="80%"/>
+  </td> -->
+
+  <td width="25%" style="text-align: right; padding-left: 6px;">
+    <img src="assets/imgs/me.png" style="width:90%;">
+  </td>
+</tr>
+
+
+	</tbody>
+</table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:0;width:100%;vertical-align:middle">
+            <h2>News (Recent 2 years)</h2>
+            <p>
+              <li style="margin: 5px;" >
+                <b>[2026/02] 1 paper accepted by ICRA 2026.</b> — Co-author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2026/02] 1 paper accepted by TMM.</b> — Co-author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2026/02] 7 paper accepted by CVPR 2026.</b> — Two as First Author & Two as Advisor
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2026/02] 1 paper accepted by RAL 2025.</b> — First Author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2025/07] 1 paper accepted by ACM MM 2025.</b> — First Author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2025/06] 2 papers accepted by ICCV 2025 (Highlight).</b> — One as First Author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2025/04] 1 paper accepted by CVPR 2025 (Highlight).</b> — First Author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2025/04] 2 papers accepted by IJCAI 2025.</b> — Advisor
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2025/03] 1 paper accepted by SIGGRAPH 2025.</b> — Project Lead
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2025/01] 2 papers accepted by ICRA 2025.</b> — One as Advisor
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2024/07] 1 paper accepted by CVPR 2024.</b> — Co-author
+              </li>
+              <li style="margin: 5px;" >
+                <b>[2024/07] 1 paper accepted by ECCV 2024.</b> — First Author
+              </li>
+            </p>
+          </td>
+        </tr>
+      </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td id="pubs" style="width:100%;vertical-align:middle">
+              <h2>Publications</h2>
+              <div id="pub-filter-bar" class="pub-filter-bar">
+                <button type="button" class="pub-filter-btn" data-filter="selected" title="First / co-first / advisor">Selected Publications</button>
+                <button type="button" class="pub-filter-btn" data-filter="imgvideo">Image &amp; Video Generation</button>
+                <button type="button" class="pub-filter-btn" data-filter="3d4d">3D &amp; 4D Generation</button>
+                <button type="button" class="pub-filter-btn" data-filter="ad">Autonomous Driving</button>
+                <button type="button" class="pub-filter-btn" data-filter="mllm">Large Multimodal Models</button>
+                <button type="button" class="pub-filter-btn" data-filter="worldmodel">World Models</button>
+                <button type="button" class="pub-filter-btn" data-filter="robotics">Robotics</button>
+                <button type="button" class="pub-filter-btn active" data-filter="all">All</button>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+
+<span id="inprogress"></span>
+<div id="pub-items-host">
+
+<table class="pub-item" data-filters="robotics" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/xrzero_g0.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios</papertitle>
+      <br>
+      James Wang, Primo Pu, Zephyr Fung, Alex Wang, Sam Wang, Bender Deng, Kevin Wang, Zivid Liu, Chris Pan, Panda Yang, Andy Zhai, Lucy Liang, <b>Shalfun Li</b>, Johnny Sun, Jacky Xu, Will Tian, Kai Yan, Kohler Ye, Scott Li, Qian Wang, Roy Gan, Hao Wang
+      <br>
+      <em>arXiv preprint arXiv:2604.13001, 2026</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2604.13001" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://github.com/X-Square-Robot/XRZero-G0" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="3d4d worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/vega3d.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding</papertitle>
+      <br>
+      Xianjin Wu, Dingkang Liang, Tianrui Feng, Kui Xia, Yumeng Zhang, <b>Xiaofan Li</b>, Xiao Tan, Xiang Bai
+      <br>
+      <em>arXiv preprint arXiv:2603.19235, 2026</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2603.19235" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://github.com/H-EmbodVis/VEGA-3D" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/FVAR.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Visual Autoregressive Modeling via Next Focus Prediction</papertitle>
+      <br>
+      <b>Xiaofan Li*</b>, Chenming Wu*, Yanpeng Sun, Jiaming Zhou, Delin Qu, Yansong Qu, Weihao Bo, Haibao Yu, Dingkang Liang
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2511.18838" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://shalfun.github.io/FVAR" target="_blank" rel="noopener">project page</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected 3d4d ad wordmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/FF.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain</papertitle>
+      <br>
+      YuAn Wang*, <b>Xiaofan Li*<sup>†</sup></b>, Chi Huang, Wenhao Zhang, Hao Li, Bosheng Wang, Xun Sun, Jun Wang<br>
+              (* equal contribution, † Corresponding author) <br>
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2511.21113" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://github.com/wangyuanbiubiubiu/FaithFusion" target="_blank" rel="noopener">code</a>]
+		[<a href="https://shalfun.github.io/faithfusion" target="_blank" rel="noopener">project page</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/Agen.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>ViLoMeo: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory</papertitle>
+      <br>
+      Weihao Bo, Shan Zhang, Yanpeng Sun, Jingjing Wu, Qunyi Xie, Xiao Tan, Kunbin Chen, Wei He, <b>Xiaofan Li</b>, Na Zhao, Jingdong Wang, Zechao Li
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2511.21678" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://github.com/weihaobo/ViLoMeo" target="_blank" rel="noopener">code</a>]
+		[<a href="https://weihao-bo.github.io/ViLoMeo-page/" target="_blank" rel="noopener">project page</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/des.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Descriptive Caption Enhancement with Visual Specialists for Multimodal Perception</papertitle>
+      <br>
+      Yanpeng Sun, Jing Hao, Ke Zhu, Jiang-Jiang Liu, Yuxiang Zhao, <b>Xiaofan Li</b>, Gang Zhang, Zechao Li, Jingdong Wang
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2412.14233" target="_blank" rel="noopener">paper</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="robotics" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/FM.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denosing</papertitle>
+      <br>
+      Haoming Song, Delin Qu, Yuanqi Yao, Qizhi Chen, Jiarui Li, Qi Lv, Yiwen Tang, Li Kang, Heng Zhou, Xianqiang Gao, Yuhang Tang, <b>Xiaofan Li</b>, Modi Shi, Guanghui Ren, Maoqing Yao, Bin Zhao, Dong Wang, Xuelong Li
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="imgvideo" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/when.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models</papertitle>
+      <br>
+      Zhengyang Sun, Yu Chen, Xin Zhou, <b>Xiaofan Li</b>, Xiwu Chen, Dingkang Liang, Xiang Bai
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/Argus.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>ARGUS: A Training‑free Geometry‑aware Universal Method for Fine-grained 3D Asset Generation</papertitle>
+      <br>
+      Mingyang Du, Dingkang Liang, Xin Zhou, Yumeng Zhang, <b>Xiaofan Li</b>, Kui Xia, Xiao Tan, Xiang Bai
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2026</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/bugs.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>BUGS: Universal 3D Gaussian Splatting with a Bi-directional Gaussian Growing Mechanism</papertitle>
+      <br>
+      Fan Duan, Yumeng Zhang, <b>Xiaofan Li</b>, Xiao Tan, Li Chen
+      <br>
+      <em>IEEE Transactions on Multimedia (<b>TMM</b>), 2026</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo ad worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/drivingdiffusion.jpg" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>DrivingDiffusion: Layout-Guided Multi-View Driving Scenarios Video Generation with Latent Diffusion Model</papertitle>
+      <br>
+      <b>Xiaofan Li</b>, Yifu Zhang, Xiaoqing Ye
+      <br>
+      <em>European Conference on Computer Vision (<b>ECCV</b>), 2024</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2310.07771" target="_blank" rel="noopener">paper</a>]
+      [<a href="https://github.com/shalfun/DrivingDiffusion" target="_blank" rel="noopener">code</a>(⭐ 500+)]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected ad" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/mpdrive.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>MPDrive: Improving Spatial Understanding with Marker-Based Prompt Learning for Autonomous Driving</papertitle>
+      <br>
+      Zhiyuan Zhang*, <b>Xiaofan Li*</b>, Zhihao Xu, Wenjie Peng, Zijian Zhou, Miaojing Shi, Shuangping Huang<br>
+              (* equal contribution) <br>
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2025 <b>[Highlight]</b></em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2504.00379" target="_blank" rel="noopener">paper</a>]
+<!--       	[<a href="https://github.com/shalfun/DrivingDiffusion" target="_blank" rel="noopener">code</a>] -->
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected ad" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/uvilar.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>U-ViLAR: Uncertainty-Aware Visual Localization for Autonomous Driving via Differentiable Association and Registration</papertitle>
+      <br>
+      <b>Xiaofan Li</b>, Zhihao Xu, Chenming Wu, Zhao Yang, Yumeng Zhang, Jiang-Jiang Liu, Haibao Yu, Xiaoqing Ye, YuAn Wang, Shirui Li, Xun Sun, Ji Wan, Jun Wang
+      <br>
+      <em>International Conference on Computer Vision (<b>ICCV</b>), 2025</em>
+      <br>
+      [<a href="https://www.arxiv.org/abs/2507.04503" target="_blank" rel="noopener">paper</a>]
+<!--       	[<a href="https://github.com/shalfun/DrivingDiffusion" target="_blank" rel="noopener">code</a>] -->
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected 3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/drag.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Drag Your Gaussian: Effective Drag-Based Editing with Score Distillation for 3D Gaussian Splatting</papertitle>
+      <br>
+      Yansong Qu, Dian Chen, Xinyang Li, <b>Xiaofan Li<sup>†</sup></b>, Shengchuan Zhang, Liujuan Cao, Rongrong Ji<sup>†</sup>
+	  <br>
+              († equal advising)<br>
+      <br>
+      <em>ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques (<b>SIGGRAPH</b>), 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2501.18672" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/Quyans/Drag-Your-Gaussian" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo ad worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/driverse.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>DriVerse: Navigation World Model for Driving Simulation via Multimodal Trajectory Prompting and Motion Alignment</papertitle>
+      <br>
+      <b>Xiaofan Li</b>, Chenming Wu, Zhao Yang, Zhihao Xu, Dingkang Liang, Yumeng Zhang, Ji Wan, Jun Wang
+      <br>
+      <em>ACM International Conference on Multimedia (<b>ACM MM</b>), 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2504.18576" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/shalfun/DriVerse" target="_blank" rel="noopener">code</a>(⭐ 200+)]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected 3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/ral.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Towards Support-Effective Fabrication of 3D Mesh Generation with Preference Alignment</papertitle>
+      <br>
+      Chenming Wu*, <b>Xiaofan Li*</b>, Chengkai Dai<br>
+              (* equal contribution)<br>
+      <br>
+      <em>IEEE Robotics and Automation Letters (<b>RAL</b>), 2025</em>
+      <br>
+      [<a href="https://arxiv.org/html/2511.16434v1" target="_blank" rel="noopener">paper</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected ad worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/bevworld.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>BevWorld: A Multimodal World Model for Autonomous Driving via Unified BEV Latent Space</papertitle>
+      <br>
+      Yumeng Zhang*, Shi Gong*, Kaixin Xiong*, Xiaoqing Ye, <b>Xiaofan Li</b>, Xiao Tan, Fan Wang, Jizhou Huang, Hua Wu, Haifeng Wang
+      <br>
+      <em>arXiv preprint arXiv:2407.05679, 2024</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2407.05679" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/shalfun/BevWorld" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo ad" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/dualdiff.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>DualDiff+: Dual-Branch Diffusion for High-Fidelity Video Generation with Reward Guidance</papertitle>
+      <br>
+      Zhao Yang, Zezhong Qian, <b>Xiaofan Li<sup>†</sup></b>, Weixiang Xu, Gongpeng Zhao, Ruohong Yu, Lingsi Zhu, Longjun Liu<sup>†</sup><br>
+              († equal advising)<br>
+      <br>
+      <em>IEEE International Conference on Robotics and Automation (<b>ICRA</b>), 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2503.03689" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/yangzhaojason/DualDiff" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected ad worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/wmsurvey.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey</papertitle>
+      <br>
+      Sifan Tu, Xin Zhou, Dingkang Liang, Xingyu Jiang, Yumeng Zhang, <b>Xiaofan Li<sup>†</sup></b>, Xiang Bai<sup>†</sup><br>
+              († equal advising)<br>
+      <br>
+      <em>International Joint Conference on Artificial Intelligence (<b>IJCAI</b>), 2024</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2502.10498" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/LMD0311/Awesome-World-Model" target="_blank" rel="noopener">code</a>(⭐ 1.2k)]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="ad" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/cooptrack.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception</papertitle>
+      <br>
+      Jiaru Zhong, Jiahao Wang, Jiahui Xu, <b>Xiaofan Li</b>, Zaiqing Nie, Haibao Yu
+      <br>
+      <em>International Conference on Computer Vision (<b>ICCV</b>), 2025</em> <b>[Highlight]</b>
+      <br>
+      [<a href="https://arxiv.org/abs/2507.19239" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/zhongjiaru/CoopTrack" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/VRPSAM.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>VRP-SAM: SAM with visual reference prompt</papertitle>
+      <br>
+      Yanpeng Sun, Jiahui Chen, Shan Zhang, Xinyu Zhang, <b>Xiaofan Li</b>, Qiang Chen, Gang Zhang, Errui Ding, Jingdong Wang, Zechao Li
+      <br>
+      <em>Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2024</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2402.17726" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/syp2ysy/VRP-SAM" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/Exploring.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Exploring effective factors for improving visual in-context learning</papertitle>
+      <br>
+      Yanpeng Sun, Qiang Chen, <b>Xiaofan Li</b>, Jian Wang, Jingdong Wang, Zechao Li
+      <br>
+      <em>IEEE Transactions on Image Processing, 2025</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2304.04748" target="_blank" rel="noopener">paper</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected 3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/P2P.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>From Prompts to Printable Models: Support-Effective 3D Generation via Offset Direct Preference Optimization</papertitle>
+      <br>
+      Chenming Wu*, <b>Xiaofan Li*</b>, Chengkai Dai<br>
+              (* equal contribution) <br>
+      <br>
+      <em>arXiv preprint arXiv:2511.16434, 2025</em>
+      <br>
+      [<a href="https://arxiv.org/abs/2511.16434" target="_blank" rel="noopener">paper</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected mllm robotics" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/walloss.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>WALL-OSS: Igniting VLMs toward the Embodied Space</papertitle>
+      <br>
+      Andy Zhai, Brae Liu, Bruno Fang, Chalse Cai, Ellie Ma, Ethan Yin, Hao Wang, Hugo Zhou, James Wang, Lights Shi, Lucy Liang, Make Wang, Qian Wang, Roy Gan, Ryan Yu, <b>Shalfun Li</b>, Starrick Liu, Sylas Chen, Vincent Chen, Zach Xu
+      <br>
+      <em>arXiv preprint arXiv:2509.11766, 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2509.11766" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/X-Square-Robot/wall-x" target="_blank" rel="noopener">code</a>(⭐ 800+)]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/Video4Edit.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Video4Edit: Viewing Image Editing as a Degenerate Temporal Process</papertitle>
+      <br>
+      <b>Xiaofan Li</b>, Yanpeng Sun, Chenming Wu, Fan Duan, YuAn Wang, Weihao Bo, Yumeng Zhang, Dingkang Liang
+      <br>
+      <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</em>, 2026
+      <br>
+      [<a href="https://arxiv.org/abs/2511.18131" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://shalfun.github.io/video4edit" target="_blank" rel="noopener">project page</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/Artemis.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Artemis: Structured Visual Reasoning for Perception Policy Learning</papertitle>
+      <br>
+      Wei Tang, Yanpeng Sun, Shan Zhang, <b>Xiaofan Li<sup>†</sup></b>, Piotr Koniusz, Wei Li, Na Zhao, Zechao Li<br>
+      († Corresponding author)<br>
+      <br>
+      <em>arXiv preprint arXiv:2511.16434, 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2512.01988" target="_blank" rel="noopener">paper</a>]
+		[<a href="https://github.com/WayneTomas/Artemis" target="_blank" rel="noopener">code</a>]
+		[<a href="https://vi-ocean.github.io/projects/artemis" target="_blank" rel="noopener">project page</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected 3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/nerfdets.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>NeRF-DetS: Enhanced Adaptive Spatial-Wise Sampling and View-Wise Fusion Strategies for NeRF-Based Indoor Multi-View 3D Object Detection</papertitle>
+      <br>
+      Chi Huang, Xinyang Li, Yansong Qu, Changli Wu, <b>Xiaofan Li<sup>†</sup></b>, Shengchuan Zhang, Liujuan Cao<sup>†</sup><br>
+              († equal advising)<br>
+      <br>
+      <em>International Joint Conference on Artificial Intelligence (<b>IJCAI</b>), 2024</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2404.13921" target="_blank" rel="noopener">paper</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/mllmanalysis.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Revisiting MLLMs: An In-Depth Analysis of Image Classification Abilities</papertitle>
+      <br>
+      Huan Liu, Lingyu Xiao, Jiangjiang Liu, <b>Xiaofan Li</b>, Ze Feng, Sen Yang, Jingdong Wang
+      <br>
+      <em>arXiv preprint arXiv:2412.16418, 2024</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2412.16418" target="_blank" rel="noopener">paper</a>]
+<!--       	[<a href="https://github.com/shalfun/DrivingDiffusion" target="_blank" rel="noopener">code</a>] -->
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="ad worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/Learning.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving</papertitle>
+      <br>
+      Lingyu Xiao, Jiang-Jiang Liu, Sen Yang, <b>Xiaofan Li</b>, Xiaoqing Ye, Wankou Yang, Jingdong Wang
+      <br>
+      <em>IEEE International Conference on Robotics and Automation (<b>ICRA</b>), 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2409.15730" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/syp2ysy/EDC" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="ad worldmodel" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/seeing.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>UniFuture: A Unified Driving World Model for Future Generation and Perception</papertitle>
+      <br>
+      Dingkang Liang, Dingyuan Zhang, Xin Zhou, Sifan Tu, Tianrui Feng, <b>Xiaofan Li</b>, Yumeng Zhang, Mingyang Du, Xiao Tan, Xiang Bai
+      <br>
+      <em>IEEE International Conference on Robotics and Automation (<b>ICRA</b>), 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2503.13587" target="_blank" rel="noopener">paper</a>]
+      	[<a href="https://github.com/dk-liang/UniFuture" target="_blank" rel="noopener">code</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/vremenber.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Vision Remember: Alleviating Visual Forgetting in Efficient MLLM with Vision Feature Resample</papertitle>
+      <br>
+      Ze Feng, Jiang-Jiang Liu, Sen Yang, Lingyu Xiao, Xiaofan Li, Wankou Yang, Jingdong Wang
+      <br>
+      <em>arXiv preprint arXiv:2506.03928, 2025</em>
+      <br>
+      [<a href="https://arxiv.org/pdf/2506.03928" target="_blank" rel="noopener">paper</a>]
+<!--       	[<a href="https://github.com/dk-liang/UniFuture" target="_blank" rel="noopener">code</a>] -->
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="3d4d worldmodel" data-inprogress="1" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/free_lunch_3d_geometry.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Serving a Free Lunch for Fine Grained 3D Geometry via Entropy Guided Attention</papertitle>
+      <br>
+      Mingyang Du, Dingkang Liang, Xin Zhou, Yumeng Zhang, <b>Xiaofan Li</b>, Kui Xia, Xiao Tan, Xiang Bai
+      <br>
+      <em>Under review</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo ad worldmodel" data-inprogress="1" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/loop.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>LoopGen: Generative Street Scene Expansion via Diffusion-Aided Outlier Repair</papertitle>
+      <br>
+      <b>Xiaofan Li</b>, Yuan Wang, Ji Wan, Jun Wang
+      <br>
+      <em>Under review</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="ad" data-inprogress="1" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/read.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Rethinking Autonomous Driving Planner Beyond Tweaking the Framework</papertitle>
+      <br>
+      Lingyu Xiao, Jiang-Jiang Liu, <b>Xiaofan Li</b>, Xiaoqing Ye, Wankou Yang
+      <br>
+      <em>Under review</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="selected imgvideo" data-inprogress="1" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/yz.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Controllable Panoramic Video Generation with 360-Degree Motion Consistency</papertitle>
+      <br>
+      Yuzhi Chen, Qi Zeng, Muyang Zhang, Leilei Fan, <b>Xiaofan Li<sup>†</sup></b>, Changwei Wang, Rongtao Xu, Yanchao Liu, MingMing Yu, Weiliang Meng<br>
+      <em>Under review</em><br>
+      († Corresponding author)<br>
+      <br>
+      [<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433210" target="_blank" rel="noopener">paper</a>]
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+
+<table class="pub-item" data-filters="3d4d" data-inprogress="1" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/EIDOS.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>EIDOS: Democratizing High-Fidelity 3D Generative Models via Discriminative Prior Transfer</papertitle>
+      <br>
+      Xiao Luo, Xin Zhou, Mingyang Du, Tianrui Feng, Xiwu Chen, <b>Xiaofan Li</b>, Dingkang Liang
+      <br>
+      <em>Under review</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class="pub-item" data-filters="mllm" data-inprogress="1" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr>
+    <td style="padding:20px;width:30%;max-width:30%" align="center">
+      <img style="width:100%;max-width:100%" src="assets/imgs/DIOCblueberry.png" alt="thumb">
+    </td>
+    <td width="75%" valign="center">
+      <papertitle>Benchmarking Dense and Indiscernible Object Counting with Blueberries</papertitle>
+      <br>
+      Weihao Bo, Jingwen Qin, Yanpeng Sun, Fei Shen, <b>Xiaofan Li</b>, Zechao Li
+      <br>
+      <em>Under review</em>
+      <br>
+    </td>
+  </tr>
+</tbody></table>
+
+</div>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td id="talks" style="padding:0;width:100%;vertical-align:middle">
+            <h2>Talks & Presentations</h2>
+            <ul style="padding-left: 0; margin: 0; list-style: none;">
+              <li class="talk-item">
+                <b class="talk-year">[02/2025]</b>
+                <span class="talk-body">Self-supervised vision, multimodal foundation models, and the evolving role of visual representation learning @ <a href="https://ir.baidu.com/company-overview/" target="_blank" rel="noopener">Baidu</a></span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[10/2024]</b>
+                <span class="talk-body">Invited talk: <em>DrivingDiffusion: Layout-Guided Multi-View Driving Scenarios Video Generation with Latent Diffusion Model</em> @ Brown Institute for Media Innovation, <a href="https://www.stanford.edu/" target="_blank" rel="noopener">Stanford University</a> (with Prof. Maneesh Agrawala)</span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[06/2023]</b>
+                <span class="talk-body">Controllable multi-view video generation and self-supervised 3D motion representation learning @ <a href="https://ir.baidu.com/company-overview/" target="_blank" rel="noopener">Baidu</a></span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[03/2022]</b>
+                <span class="talk-body">Diffusion-based models for visual perception and planning in autonomous driving @ <a href="https://ir.baidu.com/company-overview/" target="_blank" rel="noopener">Baidu</a></span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[07/2020]</b>
+                <span class="talk-body">RKNN: A neural network operator library for inference acceleration on NPU and DSP @ <a href="https://www.rock-chips.com/" target="_blank" rel="noopener">Rockchip</a> &amp; <a href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a></span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[02/2020]</b>
+                <span class="talk-body">Monocular dynamic-video face reconstruction and image signal processing @ <a href="https://www.rock-chips.com/" target="_blank" rel="noopener">Rockchip</a> &amp; <a href="https://www.intel.com/" target="_blank" rel="noopener">Intel</a></span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[05/2019]</b>
+                <span class="talk-body">Multi-resolution high dynamic range imaging in general-purpose computer vision @ <a href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">ZJU</a>-IPLab &amp; <a href="https://ethz.ch/en.html" target="_blank" rel="noopener">ETH Zürich</a></span>
+              </li>
+              <li class="talk-item">
+                <b class="talk-year">[09/2017]</b>
+                <span class="talk-body">One-shot face recognition: discriminative and generative formulations @ <a href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">ZJU</a>-3DV Group</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody></table>
+
+<h2>Academic Service</h2>
+
+<ul>
+    <li>
+        Conference Reviewer: NeurIPS, ICLR, ICML, CVPR, ICCV, ECCV, MM, ICRA, etc.
+ </br>
+    </li>
+
+    <li>
+        Journal Reviewer: IJCV, Pattern Recognition, Neurocomputing</br> 
+    </li>
+
+</ul>
+
+<table width="100%"> 
+	<tr> 
+		<td id="about" align="center">&copy; Xiaofan Li | Last update: June 2025</td>
+	</tr> 
+</table>
+
+<script>
+(function () {
+  var bar = document.getElementById('pub-filter-bar');
+  var host = document.getElementById('pub-items-host');
+  if (!bar || !host) return;
+  var items = host.querySelectorAll('table.pub-item');
+  items.forEach(function (t, i) {
+    t.setAttribute('data-orig-index', String(i));
+  });
+  function sortByOrig(a, b) {
+    return parseInt(a.getAttribute('data-orig-index'), 10) - parseInt(b.getAttribute('data-orig-index'), 10);
+  }
+  function apply(filter) {
+    items.forEach(function (tbl) {
+      var raw = tbl.getAttribute('data-filters') || '';
+      var tags = raw.split(/\s+/).filter(function (s) { return s.length; });
+      var show = filter === 'all' || tags.indexOf(filter) !== -1;
+      tbl.style.display = show ? '' : 'none';
+    });
+    var all = Array.from(host.querySelectorAll('table.pub-item'));
+    var visible = all.filter(function (t) { return t.style.display !== 'none'; });
+    var published = visible.filter(function (t) { return t.getAttribute('data-inprogress') !== '1'; });
+    var inprog = visible.filter(function (t) { return t.getAttribute('data-inprogress') === '1'; });
+    published.sort(sortByOrig);
+    inprog.sort(sortByOrig);
+    var ordered = filter === 'all' ? all.slice().sort(sortByOrig) : published.concat(inprog);
+    ordered.forEach(function (t) { host.appendChild(t); });
+    bar.querySelectorAll('.pub-filter-btn').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-filter') === filter);
+    });
+  }
+  bar.addEventListener('click', function (e) {
+    var btn = e.target.closest('.pub-filter-btn');
+    if (!btn) return;
+    var f = btn.getAttribute('data-filter');
+    if (f) apply(f);
+  });
+  apply('all');
+})();
+</script>
+
+</body>
+
+</html>

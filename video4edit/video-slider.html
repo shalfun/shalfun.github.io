@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频展示 - FaithFusion</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    
+    .video-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    
+    .video-player {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+    
+    .video-player.active {
+      display: block;
+    }
+    
+    .video-label {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px 16px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 10;
+    }
+    
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 30;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .control-btn {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .control-btn:hover {
+      background: white;
+      transform: translateY(-1px);
+    }
+    
+    .instruction {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      z-index: 30;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+    
+    @media (max-width: 768px) {
+      .controls {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .instruction {
+        font-size: 12px;
+        bottom: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <div class="video-wrapper">
+      <!-- Novel Trajectory Videos -->
+      <video id="novel-3m" class="video-player" controls muted playsinline>
+        <source src="./static/videos/005_left_3m_EIG.mov" type="video/mp4">
+      </video>
+      <video id="novel-6m" class="video-player" controls muted playsinline>
+        <source src="./static/videos/005_left_6m_EIG.mov" type="video/mp4">
+      </video>
+      
+      <!-- Method Comparisons Videos -->
+      <video id="method-3m" class="video-player" controls muted playsinline>
+        <source src="./static/videos/method_005_left3.mov" type="video/mp4">
+      </video>
+      <video id="method-6m" class="video-player" controls muted playsinline>
+        <source src="./static/videos/method_005_left6.mov" type="video/mp4">
+      </video>
+      
+      <div class="video-label" id="videoLabel">Novel Trajectory - 3m</div>
+    </div>
+    
+    <div class="instruction">使用按钮切换视频</div>
+    
+    <div class="controls">
+      <button class="control-btn" onclick="prevVideo()">上一个</button>
+      <button class="control-btn" onclick="toggleCategory()">切换类别</button>
+      <button class="control-btn" onclick="nextVideo()">下一个</button>
+    </div>
+  </div>
+
+  <script>
+    const videos = {
+      novel: [
+        { id: 'novel-3m', label: 'Novel Trajectory - 3m' },
+        { id: 'novel-6m', label: 'Novel Trajectory - 6m' }
+      ],
+      method: [
+        { id: 'method-3m', label: 'Method Comparison - 3m' },
+        { id: 'method-6m', label: 'Method Comparison - 6m' }
+      ]
+    };
+    
+    let currentCategory = 'novel';
+    let currentVideoIndex = 0;
+    const videoLabel = document.getElementById('videoLabel');
+    
+    function showVideo(category, index) {
+      // Hide all videos
+      document.querySelectorAll('.video-player').forEach(video => {
+        video.classList.remove('active');
+      });
+      
+      // Show selected video
+      const videoId = videos[category][index].id;
+      const video = document.getElementById(videoId);
+      video.classList.add('active');
+      videoLabel.textContent = videos[category][index].label;
+      
+      // Update current state
+      currentCategory = category;
+      currentVideoIndex = index;
+    }
+    
+    function prevVideo() {
+      const categoryVideos = videos[currentCategory];
+      currentVideoIndex = (currentVideoIndex - 1 + categoryVideos.length) % categoryVideos.length;
+      showVideo(currentCategory, currentVideoIndex);
+    }
+    
+    function nextVideo() {
+      const categoryVideos = videos[currentCategory];
+      currentVideoIndex = (currentVideoIndex + 1) % categoryVideos.length;
+      showVideo(currentCategory, currentVideoIndex);
+    }
+    
+    function toggleCategory() {
+      const newCategory = currentCategory === 'novel' ? 'method' : 'novel';
+      showVideo(newCategory, 0); // Reset to first video when switching category
+    }
+    
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      switch(e.code) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          prevVideo();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          nextVideo();
+          break;
+        case 'Space':
+          e.preventDefault();
+          const activeVideo = document.querySelector('.video-player.active');
+          if (activeVideo.paused) {
+            activeVideo.play();
+          } else {
+            activeVideo.pause();
+          }
+          break;
+        case 'KeyC':
+          e.preventDefault();
+          toggleCategory();
+          break;
+      }
+    });
+    
+    // Initialize
+    window.addEventListener('load', () => {
+      showVideo('novel', 0);
+      
+      // Preload all videos
+      Object.values(videos).forEach(category => {
+        category.forEach(video => {
+          document.getElementById(video.id).load();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

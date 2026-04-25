@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Harmonizing Reconstruction and Generation via Pixel-wise Information Gain.">
+  <meta name="keywords" content="FaithFusion, Diffusion, Gaussian Splatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/title.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div style="margin-bottom: 1.5rem;">
+            <img src="./static/images/title.png" alt="FaithFusion" style="max-width: 250px; width: 100%; height: auto; display: block; margin: 0 auto;">
+          </div>
+          <h1 class="title is-1 publication-title"><span class="gradient-text">FaithFusion: </span> Harmonizing Reconstruction and Generation via Pixel-wise Information Gain</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">YuAn Wang<sup>1,*</sup>,</span>
+            <span class="author-block">Xiaofan Li<sup>1,*,†</sup>,</span>
+            <span class="author-block">Chi Huang<sup>1</sup>,</span>
+            <span class="author-block">Wenhao Zhang<sup>1,2</sup>,</span>
+            <span class="author-block">Hao Li<sup>1</sup>,</span>
+            <span class="author-block">Bosheng Wang<sup>1</sup>,</span>
+            <span class="author-block">Xun Sun<sup>1</sup>,</span>
+            <span class="author-block">Jun Wang<sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Baidu Inc,</span>
+            <span class="author-block"><sup>2</sup>Nanjing University</span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 0.5rem;">
+            <span class="author-block"><sup>*</sup>Equal Contribution,</span>
+            <span class="author-block"><sup>†</sup>Project Lead</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.21113"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/wangyuanbiubiubiu/FaithFusion"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          In controllable driving-scene reconstruction and 3D scene generation, maintaining geometric fidelity while synthesizing
+          visually plausible appearance under large viewpoint shifts is crucial. However, effective fusion of geometry-based 3DGS
+          and appearance-driven diffusion models faces inherent challenges, as the absence of pixel-wise, 3D-consistent editing
+          criteria often leads to over-restoration and geometric drift. To address these issues, we introduce <strong>FaithFusion</strong>, a
+          3DGS-diffusion fusion framework driven by pixel-wise Expected Information Gain (EIG). EIG acts as a unified policy for
+          coherent spatio-temporal synthesis: it guides diffusion as a spatial prior to refine high-uncertainty regions, while its
+          pixel-level weighting distills the edits back into 3DGS. The resulting plug-and-play system is free from extra prior
+          conditions and structural modifications. Extensive experiments on the Waymo dataset demonstrate that our approach
+          attains SOTA performance across NTA-IoU, NTL-IoU, and FID, maintaining an FID of 107.47 even at 6 meters lane shift.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Comparative Overview. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <figure class="image">
+          <img src="./static/images/teaser.png"
+               alt="Comparative overview"
+               style="width: 80%; margin: 0 auto; display: block;">
+        </figure>
+        <p class="has-text-left">
+          FaithFusion addresses the blurred boundary problem in the fusion of generation and reconstruction. The figure above demonstrates the paradigm differences between our method and different approaches.
+        </p>
+      </div>
+    </div>
+    <!--/ Comparative Overview. -->
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Pipeline</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <!-- <h3 class="title is-4 has-text-left">FaithFusion</h3> -->
+        <figure class="image">
+          <img src="./static/images/faithfusion-pipline.png"
+               alt="FaithFusion pipeline illustration">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          The EIG-guided progressive training loop with three steps: <strong>Step&nbsp;1: <em>Novel-view synthesis.</em></strong> Render laterally offset novel views and their pixel-level EIG maps from the original 3DGS. <strong>Step&nbsp;2: <em>EIGent Fixed.</em></strong> Feed the renders and EIG maps into EIGent to repair high-EIG regions—using Video DiT early for spatio-temporal consistency and DIFIX3D+ later for per-frame perceptual refinement. <strong>Step&nbsp;3: <em>EIG-guided 3DGS Update.</em></strong> Fine-tune the 3DGS model with the EIGent-restored views and EIG maps.
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">EIGent Architecture</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <!-- <h3 class="title is-4 has-text-left">EIGent</h3> -->
+        <figure class="image">
+          <img src="./static/images/eigent-pipline.png"
+               alt="Overview of EIGent">
+        </figure>
+        <p class="has-text-left">
+          <!-- <strong>Overview of EIGent.</strong> <em>Data:</em> Cross-view pairing: a forward-camera–trained 3DGS renders right-front views to produce artifact-prone novel-view renders and per-pixel EIG (Alg.&nbsp;1), temporally aligned with real right-front videos. <em>Architecture:</em> EIGent is a dual-branch model with coarse-to-fine EIG guidance: downsampled <span>E</span>, noise latent <span>L<sub>N</sub></span>, and VAE latent <span>L</span> feed a lightweight context encoder <span>𝒢</span>; a mask <span>M</span> suppresses high-EIG regions. Via cross-attention with a DIFIX branch, cues are injected into a pretrained DiT backbone, enabling EIG-aware controllable repair and foreground spatio-temporal consistency. -->
+        </p>
+      </div>
+    </div>
+    <!--/ Pipeline. -->
+
+    <!-- Paper video.
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    / Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparisons</h2>
+        <div class="buttons comparison-toggle-group">
+          <button class="button comparison-toggle is-info is-outlined"
+                  type="button"
+                  data-comparison-toggle="shift-3m">
+            Lane Shift @ 3m
+          </button>
+          <button class="button comparison-toggle is-light"
+                  type="button"
+                  data-comparison-toggle="shift-6m">
+            Lane Shift @ 6m
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="comparison-panel is-active" data-comparison-panel="shift-3m">
+      <h3 class="title is-4 has-text-left">Novel Trajectory</h3>
+      <div class="video-carousel">
+          <div class="carousel-container eig-carousel">
+            <div class="carousel-slide active">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/005_left_3m_EIG.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Sample 005 (3m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/018_left_3m_EIG.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Sample 018 (3m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/027_left_3m_EIG.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Sample 027 (3m)</p>
+            </div>
+          </div>
+      </div>
+      <p>
+        This comparison highlights how FaithFusion leverages pixel-wise EIG maps to maintain geometric fidelity under large viewpoint shifts, by showcasing OmniRe's renders at both origin and shift trajectories alongside FaithFusion's shift renders.
+      </p>
+      <br>
+      <h3 class="title is-4 has-text-left">Method Comparisons</h3>
+      <div class="video-carousel">
+          <div class="carousel-container method-carousel">
+            <div class="carousel-slide active">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_081_left3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 081 (3m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_121_left3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 121 (3m)</p>
+            </div>
+             <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_065_left3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 065 (3m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_005_left3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 005 (3m)</p>
+            </div>
+              <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_018_right3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 018 (r3m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_027_left3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 027 (3m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_018_left3.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 018 (l3m)</p>
+            </div>
+          </div>
+        <p>
+        This comparison highlights FaithFusion's superior performance in visual fidelity and geometric consistency compared to advanced state-of-the-art methods, with the accompanying EIG maps revealing the pixel-wise distribution of uncertainty or information gain across the scene under different rendering states.
+        </p>
+      </div>
+    </div>
+
+    <div class="comparison-panel" data-comparison-panel="shift-6m">
+      <h3 class="title is-4 has-text-left">Novel Trajectory</h3>
+      <div class="video-carousel">
+          <div class="carousel-container eig-carousel">
+            <div class="carousel-slide active">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/005_left_6m_EIG.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Sample 005 (6m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/018_left_6m_EIG.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Sample 018 (6m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/027_left_6m_EIG.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Sample 027 (6m)</p>
+            </div>
+          </div>
+      </div>
+      <p>
+        This comparison highlights how FaithFusion leverages pixel-wise EIG maps to maintain geometric fidelity under large viewpoint shifts, by showcasing OmniRe's renders at both origin and shift trajectories alongside FaithFusion's shift renders.
+      </p>
+      <br>
+      <h3 class="title is-4 has-text-centered" style="margin-top:2rem;">Method Comparisons</h3>
+      <div class="video-carousel">
+          <div class="carousel-container method-carousel">
+            <div class="carousel-slide active">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_065_left6.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 065 (6m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_005_left6.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 005 (6m)</p>
+            </div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline>
+                <source src="./static/videos/method_027_left6.mov" type="video/mp4">
+              </video>
+              <p class="video-caption">Method Sample 027 (6m)</p>
+            </div>
+          </div>
+        <p>
+        This comparison highlights FaithFusion's superior performance in visual fidelity and geometric consistency compared to advanced state-of-the-art methods, with the accompanying EIG maps revealing the pixel-wise distribution of uncertainty or information gain across the scene under different rendering states.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{wang2025faithfusionharmonizingreconstructiongeneration,
+      title={FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain}, 
+      author={YuAn Wang and Xiaofan Li and Chi Huang and Wenhao Zhang and Hao Li and Bosheng Wang and Xun Sun and Jun Wang},
+      year={2025},
+      eprint={2511.21113},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.21113}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+<!--           <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p>
+            Website templates borrowed from  <a
+              href="https://nerfies.github.io/">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+
+  <script>
+    // Carousel functionality
+    function getCarousel(element) {
+      return element.closest('.video-carousel');
+    }
+
+    function updateCarouselClasses(carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const activeIndex = slides.findIndex(slide => slide.classList.contains('active'));
+      
+      // Reset all slides
+      slides.forEach(slide => {
+        slide.classList.remove('prev', 'next');
+        slide.onclick = null;
+      });
+
+      // Determine prev and next indices
+      const prevIndex = (activeIndex - 1 + slides.length) % slides.length;
+      const nextIndex = (activeIndex + 1) % slides.length;
+
+      // Add classes
+      slides[prevIndex].classList.add('prev');
+      slides[nextIndex].classList.add('next');
+
+      // Add click handlers
+      slides[prevIndex].onclick = function() { prevSlide(this); };
+      slides[nextIndex].onclick = function() { nextSlide(this); };
+      
+      // Auto-play active slide and pause others
+      slides.forEach((slide, index) => {
+        const video = slide.querySelector('video');
+        if (video) {
+            if (index === activeIndex) {
+                video.play().catch(e => console.log(e));
+            } else {
+                video.pause();
+            }
+        }
+      });
+    }
+
+    function prevSlide(element) {
+      const carousel = getCarousel(element);
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const current = carousel.querySelector('.carousel-slide.active');
+      const currentIndex = slides.indexOf(current);
+      
+      const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+      
+      current.classList.remove('active');
+      slides[prevIndex].classList.add('active');
+      
+      updateCarouselClasses(carousel);
+    }
+
+    function nextSlide(element) {
+      const carousel = getCarousel(element);
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const current = carousel.querySelector('.carousel-slide.active');
+      const currentIndex = slides.indexOf(current);
+      
+      const nextIndex = (currentIndex + 1) % slides.length;
+      
+      current.classList.remove('active');
+      slides[nextIndex].classList.add('active');
+      
+      updateCarouselClasses(carousel);
+    }
+
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.carousel-slide video').forEach(video => {
+        video.addEventListener('error', () => {
+          console.error(`Failed to load video: ${video.querySelector('source').src}`);
+        });
+        video.load();
+      });
+      
+      document.querySelectorAll('.video-carousel').forEach(carousel => {
+        updateCarouselClasses(carousel);
+      });
+    });
+  </script>
+</body>
+</html>

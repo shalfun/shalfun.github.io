@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FVAR: Visual Autoregressive Modeling via Next Focus Prediction.">
+  <meta name="keywords" content="FVAR, Visual Autoregressive Modeling, Next Focus Prediction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FVAR: Visual Autoregressive Modeling via Next Focus Prediction</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/title.png"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div style="margin-bottom: 1.5rem;">
+            <img src="./static/images/title.png" alt="Video4Edit" style="max-width: 250px; width: 100%; height: auto; display: block; margin: 0 auto;">
+          </div>
+          <h1 class="title is-1 publication-title"><span class="gradient-text">FVAR:</span> Visual Autoregressive Modeling via Next Focus Prediction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Xiaofan Li<sup>*</sup>,</span>
+            <span class="author-block">Chenming Wu<sup>*</sup>,</span>
+            <span class="author-block">Yanpeng Sun,</span>
+            <span class="author-block">Jiaming Zhou,</span>
+            <span class="author-block">Delin Qu,</span>
+            <span class="author-block">Yansong Qu,</span>
+            <span class="author-block">Weihao Bo,</span>
+            <span class="author-block">Haibao Yu,</span>
+            <span class="author-block">Dingkang Liang</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Baidu Inc.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.18838"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/placeholder-repo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Visual autoregressive models achieve remarkable generation quality through next-scale predictions across multi-scale token pyramids. However, the conventional method uses uniform scale downsampling to build these pyramids, leading to aliasing artifacts that compromise fine details and introduce unwanted jaggies and moiré patterns. To tackle this issue, we present FVAR, which reframes the paradigm from next-scale prediction to next-focus prediction, mimicking the natural process of camera focusing from blur to clarity. Our approach introduces three key innovations: 1) Next-Focus Prediction Paradigm that transforms multi-scale autoregression by progressively reducing blur rather than simply downsampling; 2) Progressive Refocusing Pyramid Construction that uses physics-consistent defocus kernels to build clean, alias-free multi-scale representations; and 3) High-Frequency Residual Learning that employs a specialized residual teacher network to effectively incorporate alias information during training while maintaining deployment simplicity. Specifically, we construct optical low-pass views using defocus point spread function (PSF) kernels with decreasing radius, creating smooth blur-to-clarity transitions that eliminate aliasing at its source. To further enhance detail generation, we introduce a High-Frequency Residual Teacher that learns from both clean structure and alias residuals, distilling this knowledge to a vanilla VAR deployment network for seamless inference. Extensive experiments on ImageNet demonstrate that FVAR substantially reduces aliasing artifacts, improves fine detail preservation, and enhances text readability, achieving superior performance with perfect compatibility to existing VAR frameworks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Overview</h2>
+        <figure class="image">
+          <img src="./static/images/1.png"
+               alt="xxx"
+               style="width: 80%; margin: 0 auto; display: block;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          Progressive Refocusing vs. Uniform Downsampling. Our method shifts the paradigm from "next-scale prediction" to "next-focus prediction." (Left) Standard VAR uses uniform downsampling, introducing aliasing artifacts from coarse to fine scales. (Right) Our proposed FVAR employs progressive refocusing with decreasing PSF radius, mimicking camera focusing from blur to clarity. This physics-consistent approach eliminates aliasing at the source while preserving fine details through dual-path tokenization.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <figure class="image">
+          <img src="./static/images/2.png"
+               alt="xxx"
+               style="width: 80%; margin: 0 auto; display: block;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          High-Frequency Residual Teacher Training Architecture. Our approach employs dual networks during training: the High-Frequency Residual Teacher (top) processes both structure tokens 𝑟𝑘 and alias tokens 𝑎𝑘 through Alias-Gate Cross-Attention, while the Deployment Network (bottom) only uses structure tokens to maintain vanilla VAR compatibility. Residual knowledge transfer enables the deployment network to benefit from high-frequency information during training while ensuring zero inference overhead.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Visualization</h2>
+        <figure class="image">
+          <img src="./static/images/3.png"
+               alt="xxx"
+               style="width: 100%; height: auto;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          Visual quality comparison between VAR and FVAR. To compare the quality of spatial hierarchy and high-frequency details, these are visualization results at 1024×1024 resolution. The first row shows image generation, and the second row shows inpainting and outpainting (solid red boxes indicate input regions). In each group, VAR is on the left and FVAR is on the right. Dashed red boxes highlight key regions of interest.
+        </p>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{li2025fvarvisualautoregressivemodeling,
+      title={FVAR: Visual Autoregressive Modeling via Next Focus Prediction}, 
+      author={Xiaofan Li and Chenming Wu and Yanpeng Sun and Jiaming Zhou and Delin Qu and Yansong Qu and Weihao Bo and Haibao Yu and Dingkang Liang},
+      year={2025},
+      eprint={2511.18838},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.18838}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website templates borrowed from  <a
+              href="https://nerfies.github.io/">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Video4Edit: Viewing Image Editing as a Degenerate Temporal Process.">
+  <meta name="keywords" content="Video4Edit, Image Editing, Diffusion, Temporal Process">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video4Edit: Viewing Image Editing as a Degenerate Temporal Process</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/title.png"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div style="margin-bottom: 1.5rem;">
+            <img src="./static/images/title.png" alt="Video4Edit" style="max-width: 250px; width: 100%; height: auto; display: block; margin: 0 auto;">
+          </div>
+          <h1 class="title is-1 publication-title"><span class="gradient-text">Video4Edit:</span> Viewing Image Editing as a Degenerate Temporal Process</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Xiaofan Li,</span>
+            <span class="author-block">Yanpeng Sun,</span>
+            <span class="author-block">Chenming Wu,</span>
+            <span class="author-block">Fan Duan,</span>
+            <span class="author-block">YuAn Wang,</span>
+            <span class="author-block">Weihao Bo,</span>
+            <span class="author-block">Yumeng Zhang,</span>
+            <span class="author-block">Dingkang Liang</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Baidu Inc.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2511.18131"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/placeholder-repo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We observe that recent advances in multimodal foundation models have propelled instruction-driven image generation and editing into a genuinely cross-modal, cooperative regime. Nevertheless, state-of-the-art editing pipelines remain costly: beyond training large diffusion/flow models, they require curating massive high-quality triplets of {instruction, source image, edited image} to cover diverse user intents. Moreover, the fidelity of visual replacements hinges on how precisely the instruction references the target semantics. We revisit this challenge through the lens of temporal modeling: if video can be regarded as a full temporal process, then image editing can be seen as a degenerate temporal process. This perspective allows us to transfer single-frame evolution priors from video pre-training, enabling a highly data-efficient fine-tuning regime. Empirically, our approach matches the performance of leading open-source baselines while using only about one percent of the supervision demanded by mainstream editing models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Overview</h2>
+        <figure class="image">
+          <img src="./static/images/1.png"
+               alt="xxx"
+               style="width: 80%; margin: 0 auto; display: block;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          We view image edits through a temporal lens and categorize
+them into two families: temporal evolution (state changes over time with minimal spatial re-layout) and spatial evolution (structural
+reconfiguration). After rewriting the instruction into an evolution-style caption, a video-pretrained T2V model can often perform temporal-
+evolution edits in a zero-shot manner (though tasks such as replace still need additional consistency constraints), while spatial-evolution edits
+remain challenging. We find that a light fine-tuning of the video-pretrained model suffices to handle both families, enabling general-purpose
+image editing.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Pipeline</h2>
+        <figure class="image">
+          <img src="./static/images/2.png"
+               alt="xxx">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          We formulate image editing as a degenerate temporal process and adopt a teacher–student
+framework. The teacher (Wan2.1 FLF2V-14B) receives the source image as the first frame and the edited image as the last frame, guided by an offline evolution prompt distilled from the instruction, to roll out temporally coherent intermediate states. The student (Wan2.1 I2V-14B-720P) takes only the source image and instruction, learning from teacher signals to produce the edited result in a few steps at inference.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Multi-task Support</h2>
+        <figure class="image">
+          <img src="./static/images/3.png"
+               alt="xxx"
+               style="width: 100%; height: auto;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          A Comparative Illustration of Our Method, Open-Source Approaches, and Commercial Systems.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <figure class="image">
+          <img src="./static/images/4.png"
+               alt="Figure 4"
+               style="width: 80%; margin: 0 auto; display: block;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          <strong>Comparison with native I2V baseline.</strong> Even in zero-shot scenarios where the native I2V model can generate plausible edits, it
+often introduces inconsistencies in non-edit regions (e.g., background artifacts, color shifts, structural distortions). Video4Edit maintains
+better consistency in non-edit regions through explicit supervision and distillation-based training.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <figure class="image">
+          <img src="./static/images/5.png"
+               alt="Figure 5"
+               style="width: 80%; margin: 0 auto; display: block;">
+        </figure>
+        <p class="has-text-left" style="margin-top: 1rem;">
+          <strong>Multi-task support.</strong> Our method handles diverse edit-
+ing tasks including subject addition, removal, replacement, back-
+ground change, color alteration, and style transfer, demonstrating
+the versatility of our temporal-evolution framework.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Videos</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem;">
+          <div style="flex: 0 0 auto; width: calc(16.666% - 1rem); min-width: 200px; max-width: 300px;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/A1.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 0.5rem;">Replace the text 'TRAIN' with 'PLANE'.</p>
+          </div>
+          <div style="flex: 0 0 auto; width: calc(16.666% - 1rem); min-width: 200px; max-width: 300px;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/A2.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 0.5rem;">Restore and colorize this old photo in high definition.</p>
+          </div>
+          <div style="flex: 0 0 auto; width: calc(16.666% - 1rem); min-width: 200px; max-width: 300px;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/A3.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 0.5rem;">Remove his beard.</p>
+          </div>
+          <div style="flex: 0 0 auto; width: calc(16.666% - 1rem); min-width: 200px; max-width: 300px;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/A4.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 0.5rem;">Replace background with snowy mountain.</p>
+          </div>
+          <div style="flex: 0 0 auto; width: calc(16.666% - 1rem); min-width: 200px; max-width: 300px;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/A5.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 0.5rem;">Erase the stop sign.</p>
+          </div>
+          <div style="flex: 0 0 auto; width: calc(16.666% - 1rem); min-width: 200px; max-width: 300px;">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./static/videos/A6.mp4" type="video/mp4">
+            </video>
+            <p style="text-align: center; margin-top: 0.5rem;">Transform to sketch style.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{li2025video4editviewingimageediting,
+      title={Video4Edit: Viewing Image Editing as a Degenerate Temporal Process}, 
+      author={Xiaofan Li and Yanpeng Sun and Chenming Wu and Fan Duan and YuAn Wang and Weihao Bo and Yumeng Zhang and Dingkang Liang},
+      year={2025},
+      eprint={2511.18131},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.18131}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website templates borrowed from  <a
+              href="https://nerfies.github.io/">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+
+</body>
+</html>
