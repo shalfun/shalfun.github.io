@@ -15,6 +15,7 @@
   <meta name="author" content="Xiaofan Li, Shalfun Li">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
   <link rel="icon" type="image/png" href="assets/imgs/favicon.png" />
@@ -129,7 +130,7 @@
     Then, I joined the Joint Algorithm Department of <b>Rockchip & ZJU</b>, focusing on low-level vision and face-related algorithms, and led the open-sourcing of <a href="https://github.com/airockchip/rknn-toolkit2">RKNN</a> (⭐ ~3k).
     </p>
     <p>
-    At <b>Baidu</b>, I worked in the Autonomous Driving Foundation Model Department (ADFM) and oversaw the autonomous driving end-to-end fusion model as head of ADFM research, with work spanning 3D scene understanding, vision-language models, implicit rendering, 4D generation, and world models.
+    At <b>Baidu</b>, I worked in the Autonomous Driving Foundation Model Department (ADFM), where I oversaw the autonomous driving end-to-end model and concurrently served as head of ADFM research, with work spanning 3D scene understanding, vision-language models, implicit rendering, 4D generation, and world models.
     </p>
     <p>
     I am currently with <b>X Square Robot</b>, leading the research of the world unified model, where I continue exploring the intersection of generative models, large language models, and embodied intelligence. Please feel free to reach out if you're interested in joining.
@@ -998,7 +999,16 @@
     published.sort(sortByOrig);
     inprog.sort(sortByOrig);
     var ordered = filter === 'all' ? all.slice().sort(sortByOrig) : published.concat(inprog);
-    ordered.forEach(function (t) { host.appendChild(t); });
+    var ch = host.children;
+    var needReorder = ch.length !== ordered.length;
+    if (!needReorder) {
+      for (var oi = 0; oi < ordered.length; oi++) {
+        if (ch[oi] !== ordered[oi]) { needReorder = true; break; }
+      }
+    }
+    if (needReorder) {
+      ordered.forEach(function (t) { host.appendChild(t); });
+    }
     bar.querySelectorAll('.pub-filter-btn').forEach(function (b) {
       b.classList.toggle('active', b.getAttribute('data-filter') === filter);
     });
