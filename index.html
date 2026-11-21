@@ -18,6 +18,8 @@
 
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="publications-slice/research-map.css">
+  <link rel="stylesheet" href="publications-slice/embed-light.css">
   <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
   <link rel="icon" type="image/png" href="assets/imgs/favicon.png" />
   <link rel="shortcut icon" type="image/png" href="assets/imgs/favicon.png" />
@@ -53,32 +55,62 @@
     }
 
     .pub-filter-bar {
-        margin: 6px 0 14px 0;
-        line-height: 1.6;
+        margin: 8px 0 16px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 4px 8px;
+        gap: 6px;
+    }
+    .pub-filter-chip {
+        display: inline-flex;
+        align-items: stretch;
+        border: 1px solid #d5dbd3;
+        background: #fff;
+    }
+    .pub-filter-chip.is-active {
+        border-color: var(--topic-color, #3d8b40);
+        background: color-mix(in srgb, var(--topic-color, #4CAF50) 12%, #fff);
     }
     .pub-filter-btn {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
         margin: 0;
-        padding: 5px 11px;
-        font-size: 13px;
-        border: 1px solid #ccc;
-        background: #f9f9f9;
-        color: #333;
+        padding: 4px 7px;
+        border: 0;
+        background: transparent;
+        color: #4a544c;
         cursor: pointer;
-        border-radius: 3px;
-        font-family: Lato, Verdana, Helvetica, sans-serif;
+        font: 11px/1.2 Lato, Verdana, Helvetica, sans-serif;
     }
-    .pub-filter-btn:hover {
-        background: #eee;
+    .pub-filter-btn i {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--topic-color, #8a938a);
     }
-    .pub-filter-btn.active {
-        color: #fff;
-        background-color: #4CAF50;
-        border-color: #3d8b40;
+    .pub-filter-btn b {
+        color: var(--topic-color, #3d8b40);
+        font: 10px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-weight: 400;
+    }
+    .pub-filter-btn:hover,
+    .pub-filter-open:hover {
+        color: #1f2620;
+    }
+    .pub-filter-open {
+        margin: 0;
+        padding: 0 6px;
+        border: 0;
+        border-left: 1px solid #d5dbd3;
+        background: transparent;
+        color: #7a857c;
+        cursor: pointer;
+        font: 11px/1 Lato, Verdana, Helvetica, sans-serif;
+    }
+    .pub-filter-chip.is-active .pub-filter-open {
+        border-left-color: color-mix(in srgb, var(--topic-color) 40%, #d5dbd3);
     }
 
     .talk-item {
@@ -155,7 +187,7 @@
     <p>
       <a href="mailto:shalfunnn@gmail.com" title="shalfunnn@gmail.com"><img src="https://img.shields.io/badge/Email-shalfunnn%40gmail.com-9cf?logo=gmail&logoColor=EA4335&labelColor=f6f6f6&style=flat" alt="Email shalfunnn@gmail.com" style="vertical-align:-0.35em;height:20px;"></a>
       <a href="https://github.com/shalfun" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/GitHub-shalfun-9cf?logo=github&logoColor=181717&labelColor=f6f6f6&style=flat" alt="GitHub shalfun" style="vertical-align:-0.35em;height:20px;"></a>
-      <a href="https://scholar.google.com/citations?user=pjZdkO4AAAAJ&hl=zh-CN" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/citations-1753-9cf?logo=Google%20Scholar&labelColor=f6f6f6&style=flat" alt="Google Scholar citations 1753" style="vertical-align:-0.35em;height:20px;"></a>
+      <a href="https://scholar.google.com/citations?user=pjZdkO4AAAAJ&hl=zh-CN" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/citations-1702-9cf?logo=Google%20Scholar&labelColor=f6f6f6&style=flat" alt="Google Scholar citations 1702" style="vertical-align:-0.35em;height:20px;"></a>
       <a href="https://www.linkedin.com/in/%E6%99%93%E5%B8%86-%E6%9D%8E-294991291/details/experience/edit/forms/new" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LinkedIn-Xiaofan%20Li-9cf?logo=linkedin&logoColor=0A66C2&labelColor=f6f6f6&style=flat" alt="LinkedIn" style="vertical-align:-0.35em;height:20px;"></a>
     </p>
   </td>
@@ -181,6 +213,9 @@
               <!-- <li style="margin: 5px;" >
                 <b>[2026/05] </b>We released FM-Steer SoftTacWorld, and ARGUS.
               </li> -->
+              <li style="margin: 5px;" >
+                <b>[2026/11] </b>🚀 <a href="https://robodojo-benchmark.com/" target="_blank" rel="noopener">RoboDojo</a> was used by <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Claude Fable 5.2</a> as the only robotics evaluation.
+              </li>
               <li style="margin: 5px;" >
                 <b>[2026/11] </b>We released <a href="https://arxiv.org/pdf/2611.07084" target="_blank" rel="noopener">DMuon-2: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication</a>.
               </li>
@@ -301,16 +336,57 @@
             <tr>
             <td id="pubs" style="width:100%;vertical-align:middle">
               <h2>Publications</h2>
+              <div id="pubs-slice" class="pubs-slice">
+                <div class="research-heading">
+                  <div class="publication-overview">
+                    <p class="publication-summary" id="publication-summary" aria-label="Publication and authorship stats"></p>
+                    <p class="publication-projects">Large-scale model projects: <strong>Cosmos · ERNIE · Wan · WALL-X</strong></p>
+                  </div>
+                </div>
+                <div class="research-map" id="theme-map" aria-label="可旋转的三维论文图谱"></div>
+              </div>
+              <dialog class="slice-dialog" id="slice-detail" aria-labelledby="slice-detail-title">
+                <header>
+                  <h2 id="slice-detail-title"></h2>
+                  <form method="dialog"><button type="submit" aria-label="关闭详情" autofocus>×</button></form>
+                </header>
+                <div id="slice-detail-content"></div>
+              </dialog>
               <div id="pub-filter-bar" class="pub-filter-bar">
-                <button type="button" class="pub-filter-btn" data-filter="selected" title="First / co-first / Project Lead">Selected Publications</button>
-                <button type="button" class="pub-filter-btn" data-filter="imgvideo">Image &amp; Video Generation</button>
-                <button type="button" class="pub-filter-btn" data-filter="3d4d">3D &amp; 4D Generation</button>
-                <button type="button" class="pub-filter-btn" data-filter="ad">Autonomous Driving</button>
-                <button type="button" class="pub-filter-btn" data-filter="mllm">Large Multimodal Models</button>
-                <button type="button" class="pub-filter-btn" data-filter="worldmodel">World Models</button>
-                <button type="button" class="pub-filter-btn" data-filter="robotics">Robotics</button>
-                <button type="button" class="pub-filter-btn" data-filter="infra">Infrastructure</button>
-                <button type="button" class="pub-filter-btn active" data-filter="all">All</button>
+                <span class="pub-filter-chip">
+                  <button type="button" class="pub-filter-btn" data-filter="selected" title="First / co-first / Project Lead"><i></i><span>Selected Publications</span><b></b></button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#a7b9ef">
+                  <button type="button" class="pub-filter-btn" data-filter="imgvideo" data-topic="media"><i></i><span>Image &amp; Video Generation</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="media" aria-label="Open Image and Video Generation">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#e7aa77">
+                  <button type="button" class="pub-filter-btn" data-filter="3d4d" data-topic="3d"><i></i><span>3D &amp; 4D Generation</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="3d" aria-label="Open 3D and 4D Generation">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#ed947b">
+                  <button type="button" class="pub-filter-btn" data-filter="ad" data-topic="driving"><i></i><span>Autonomous Driving</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="driving" aria-label="Open Autonomous Driving">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#c3a7f0">
+                  <button type="button" class="pub-filter-btn" data-filter="mllm" data-topic="llm"><i></i><span>Large Multimodal Models</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="llm" aria-label="Open Large Multimodal Models">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#8ed2c7">
+                  <button type="button" class="pub-filter-btn" data-filter="worldmodel" data-topic="worldmodel"><i></i><span>World Models</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="worldmodel" aria-label="Open World Models">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#f0c975">
+                  <button type="button" class="pub-filter-btn" data-filter="robotics" data-topic="robotics"><i></i><span>Robotics</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="robotics" aria-label="Open Robotics">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#82d4bd">
+                  <button type="button" class="pub-filter-btn" data-filter="infra" data-topic="infra"><i></i><span>Infrastructure</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="infra" aria-label="Open Infrastructure">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#4CAF50">
+                  <button type="button" class="pub-filter-btn active" data-filter="all"><i></i><span>All</span><b></b></button>
+                </span>
               </div>
             </td>
           </tr>
@@ -1486,8 +1562,12 @@
 	</tr> 
 </table>
 
+<script src="publications-slice/projects.js"></script>
+<script src="publications-slice/research-map.js"></script>
+<script src="publications-slice/preview-dialog.js"></script>
+<script src="publications-slice/publications.js"></script>
 <script>
-(function () {
+  (function () {
   var bar = document.getElementById('pub-filter-bar');
   var host = document.getElementById('pub-items-host');
   if (!bar || !host) return;
@@ -1522,11 +1602,43 @@
     if (needReorder) {
       ordered.forEach(function (t) { host.appendChild(t); });
     }
-    bar.querySelectorAll('.pub-filter-btn').forEach(function (b) {
-      b.classList.toggle('active', b.getAttribute('data-filter') === filter);
+    bar.querySelectorAll('.pub-filter-chip').forEach(function (chip) {
+      var b = chip.querySelector('.pub-filter-btn');
+      var on = b && b.getAttribute('data-filter') === filter;
+      if (b) b.classList.toggle('active', on);
+      chip.classList.toggle('is-active', on);
     });
+    if (window.publicationMap) {
+      var topic = {
+        imgvideo: 'media',
+        '3d4d': '3d',
+        ad: 'driving',
+        mllm: 'llm',
+        worldmodel: 'worldmodel',
+        robotics: 'robotics',
+        infra: 'infra'
+      }[filter];
+      window.publicationMap.setTopics(topic ? [topic] : []);
+    }
   }
+  bar.querySelectorAll('.pub-filter-btn').forEach(function (b) {
+    var filter = b.getAttribute('data-filter');
+    var count = items.length;
+    if (filter !== 'all') {
+      count = Array.from(items).filter(function (tbl) {
+        var tags = (tbl.getAttribute('data-filters') || '').split(/\s+/);
+        return tags.indexOf(filter) !== -1;
+      }).length;
+    }
+    var badge = b.querySelector('b');
+    if (badge) badge.textContent = String(count);
+  });
   bar.addEventListener('click', function (e) {
+    var open = e.target.closest('[data-open-theme]');
+    if (open && window.PublicationPreview) {
+      window.PublicationPreview.openTopic(open.getAttribute('data-open-theme'));
+      return;
+    }
     var btn = e.target.closest('.pub-filter-btn');
     if (!btn) return;
     var f = btn.getAttribute('data-filter');

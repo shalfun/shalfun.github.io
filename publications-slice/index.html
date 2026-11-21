@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b3026">
+  <meta name="description" content="Xiaofan Li — Publications · 三维研究图谱">
+  <title>Publications — Xiaofan Li</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="research-map.css">
+  <link rel="stylesheet" href="slice.css">
+</head>
+<body>
+  <main class="slice-shell" id="main-content">
+    <section class="portfolio-section research-section research-slide portfolio-slide" id="research" data-reading-section="papers" aria-labelledby="research-title">
+      <div class="section-inner research-content">
+        <div class="section-kicker"><span>02</span><i></i><span>PAPERS</span></div>
+        <div class="research-heading">
+          <h2 id="research-title" tabindex="-1">Publications</h2>
+          <div class="publication-overview">
+            <p class="publication-summary" id="publication-summary" aria-label="Publication and authorship stats"></p>
+            <p class="publication-projects">Large-scale model projects: <strong>Cosmos · ERNIE · Wan · WALL-X</strong></p>
+          </div>
+        </div>
+        <div class="research-map" id="theme-map" aria-label="可旋转的三维论文图谱"></div>
+        <div class="research-footer"><span><span id="unique-count">55</span> WORKS · <span id="field-count">8</span> TOPICS · 已收录 <span id="accepted-count">26</span> 篇发表 / 录用论文</span><span>点论文查看 · 多选主题高亮</span></div>
+      </div>
+    </section>
+  </main>
+  <dialog class="slice-dialog" id="slice-detail" aria-labelledby="slice-detail-title">
+    <header>
+      <h2 id="slice-detail-title"></h2>
+      <form method="dialog"><button type="submit" aria-label="关闭详情" autofocus>×</button></form>
+    </header>
+    <div id="slice-detail-content"></div>
+  </dialog>
+  <script src="projects.js"></script>
+  <script src="research-map.js"></script>
+  <script src="preview-dialog.js"></script>
+  <script src="publications.js"></script>
+</body>
+</html>

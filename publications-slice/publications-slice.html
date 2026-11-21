@@ -1,0 +1,2774 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b3026">
+  <meta name="description" content="Xiaofan Li — Publications · 三维研究图谱">
+  <title>Publications — Xiaofan Li</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMzE1MzQyIi8+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjRmM2VkIiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciI+CiAgICA8cGF0aCBkPSJNMTkgMjEgMzAgNDNNMzAgMjEgMTkgNDNNMzcgMjFWNDNINDciLz4KICA8L2c+Cjwvc3ZnPgo=">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+.research-content{height:100%;min-height:0;justify-content:flex-start}
+.research-heading{display:flex;align-items:center;gap:clamp(24px,3vw,48px);padding:17px 0 20px;flex:none}
+.research-heading h1{flex:none;font-size:clamp(28px,2.6vw,40px);letter-spacing:-.035em}
+.publication-overview{flex:1;min-width:0;max-width:1060px;margin-left:auto;text-align:right}
+.publication-summary{margin:0;color:#c4d0bd;font-size:clamp(12px,.98vw,15px);line-height:1.85;text-wrap:pretty}
+.publication-summary strong{color:var(--lime);font-weight:600;font-variant-numeric:tabular-nums}
+.publication-honors{color:#a9bda2}
+.publication-honors strong{color:#c9dcae}
+.publication-phrase{white-space:nowrap}
+.publication-projects{margin:3px 0 0;color:#a9bda2;font-size:clamp(12px,.98vw,15px);line-height:1.7;text-wrap:pretty}
+.publication-projects strong{color:#d9e5cc;font-weight:500}
+.research-footer{flex:none;padding-top:10px;line-height:1.4}
+.research-map{position:relative;display:flex;flex-direction:column;flex:1;min-height:280px;border:1px solid #3d5648;background:#182d23;isolation:isolate}
+.map-toolbar{display:flex;align-items:center;gap:12px;min-height:32px;padding:3px 10px;border-bottom:1px solid #334e3e;flex:none}
+.map-caption{color:#afc2ac;font:10px var(--mono);letter-spacing:.05em}
+.map-help{margin-left:auto;color:#91a58f;font-size:11px}
+.map-controls{display:flex;gap:4px;flex-shrink:0}
+.map-controls button{display:grid;place-items:center;width:26px;height:26px;padding:0;border:1px solid #526a56;background:#243c2c;color:#d3dfc5;cursor:pointer;font-size:15px}
+.map-controls button:last-child{width:44px;font-size:10px}
+.map-controls button[data-map-action=motion]{width:70px;font-size:10px}
+.map-controls button:hover{background:#3c5336}
+.map-stage{position:relative;min-height:220px;flex:1;overflow:hidden;touch-action:none;cursor:grab;contain:layout paint}
+.map-stage.is-dragging,.map-stage.is-dragging *{cursor:grabbing!important}
+.map-canvas{position:absolute;inset:0;width:100%;height:100%;outline-offset:-4px}
+.map-objects{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.map-node-space{position:absolute;inset:0;transform-origin:0 0;transform-style:preserve-3d;pointer-events:none;will-change:transform}
+.map-node{position:absolute;left:-13px;top:-13px;width:26px;height:26px;border:0;border-radius:50%;padding:0;background:transparent;pointer-events:auto;cursor:pointer;opacity:0;outline:0!important;touch-action:none}
+.map-node[hidden]{display:none}
+.map-node-name{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;pointer-events:none}
+.map-topic-label{position:absolute;left:0;top:0;z-index:650;width:max-content;transform:translate(-50%,-50%);transition-property:none;will-change:transform;pointer-events:auto;background:rgba(24,45,35,.88);border:0;border-bottom:2px solid color-mix(in srgb,var(--topic-color) 55%,transparent);padding:5px 7px 6px;color:var(--topic-color);font:500 11px/1.2 var(--body);white-space:nowrap;cursor:pointer;touch-action:none}
+.map-topic-label:hover,.map-topic-label[aria-pressed=true]{background:#243b2d;border-bottom-width:2px}
+.map-legend{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 6px;padding:4px 6px;border-top:1px solid #334e3e;flex:none}
+.map-topic-chip{display:inline-flex;align-items:center;border:1px solid #3a5242;background:rgba(33,54,40,.6)}
+.map-topic-chip.is-active{border-color:var(--topic-color);background:color-mix(in srgb,var(--topic-color) 12%,#182d23)}
+.map-topic-chip button{border:0;padding:4px 5px;background:transparent;color:#bdcdb7;font-size:9px;line-height:1.2;cursor:pointer}
+.map-topic-chip button:first-child{display:inline-flex;align-items:center;gap:4px}
+.map-topic-chip button:last-child{color:#8fa487;border-left:1px solid #3a5242;padding:4px}
+.map-topic-chip i{display:block;width:6px;height:6px;border-radius:50%;background:var(--topic-color)}
+.map-topic-chip b{font:10px var(--mono);color:var(--topic-color);font-weight:400}
+.map-topic-chip button:hover{color:#f4f6df}
+.map-inspector{position:absolute;left:14px;bottom:12px;z-index:2000;max-width:min(370px,calc(100% - 28px));padding:10px 12px;border:1px solid #56714d;background:rgba(18,38,26,.97);box-shadow:0 7px 24px #0a211655;pointer-events:none}
+.map-inspector strong{display:block;color:#e3ecd5;font-size:13px;line-height:1.4;font-weight:500}
+.map-inspector small{display:block;color:#9faf98;font-size:10px;line-height:1.4;margin-top:5px}
+.map-inspector em{color:#c9dfa5;font-size:10px;line-height:1.5;font-style:normal;display:block;margin-top:5px}
+.map-selection{pointer-events:none;color:#c4d8b5;font-size:10px;white-space:nowrap}
+.map-selection:empty{display:none}
+.map-orientation{position:absolute;right:12px;bottom:4px;pointer-events:none;color:#96ac91;font:9px var(--body);letter-spacing:.03em}
+@media(min-width:1100px) and (max-height:820px){.research-heading{padding:12px 0 14px}.research-map{min-height:265px}.map-toolbar{min-height:32px;padding:3px 10px}.map-legend{gap:4px 6px;padding:4px 6px}.map-topic-chip button{padding:4px 5px}.map-topic-chip button:last-child{padding:4px}}
+@media(max-width:1100px){.map-help{font-size:10px}.map-node-name{font-size:9px;max-width:100px}.map-topic-label{font-size:10px}}
+@media(max-width:800px){.research-content{height:auto;min-height:100%}.research-heading{gap:24px}.publication-summary{font-size:12px;line-height:1.75}.research-map{flex:none;min-height:490px}.map-stage{flex:none;height:365px}.map-legend{padding:4px;gap:4px}.map-toolbar{flex-wrap:wrap;gap:6px}.map-caption{font-size:9px}.map-help{margin-left:auto}.research-footer>span:nth-child(2){max-width:55%}}
+@media(max-width:580px){.research-map{min-height:610px}.map-stage{height:445px}.map-toolbar{padding:3px 7px}.map-help{font-size:9px;max-width:120px;text-align:right;line-height:1.4}.map-controls{margin-left:auto}.map-caption{display:none}.has-selection .map-help{display:none}.map-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:4px}.map-topic-chip{min-width:0;justify-content:space-between}.map-topic-chip button:first-child{font-size:9px;gap:4px;padding:4px 5px}.map-topic-chip button:last-child{padding:4px 5px}.map-topic-chip b{font-size:9px}.map-topic-label{font-size:9px;max-width:140px;white-space:normal;text-align:center;padding:3px 4px}.map-node{left:-14px;top:-14px;width:28px;height:28px}.map-node-name{max-width:83px;font-size:9px}.map-inspector{bottom:9px;left:9px;padding:8px 10px}.map-inspector strong{font-size:12px}.research-footer{font-size:8px}.research-heading{display:block;padding:16px 0}.publication-overview{margin-top:6px;text-align:left}.research-footer>span:nth-child(2){max-width:none}}
+
+</style>
+  <style>
+/* Page shell extracted from styles.css / reader.css for the second slice. */
+:root {
+  color-scheme: dark;
+  --lime: #d4eb8e;
+  --display: "Manrope", "DM Sans", sans-serif;
+  --body: "DM Sans", sans-serif;
+  --mono: "DM Mono", monospace;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+html { background: #e0e5d8; }
+body { margin: 0; color: #eff1e9; font-family: var(--body); }
+button, input { font: inherit; }
+button, a { color: inherit; }
+[hidden] { display: none !important; }
+a, button { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
+.slice-shell { max-width: 1520px; padding: 20px; margin: auto; }
+.research-section {
+  position: relative;
+  padding: 14px clamp(24px, 3.1vw, 55px) 10px;
+  height: calc(100svh - 40px);
+  min-height: 560px;
+  border: 1px solid #294b33;
+  background: #1b3026;
+}
+.research-section .research-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+}
+.section-kicker { display: flex; align-items: center; gap: 12px; color: #94ab85; font: 10px var(--mono); letter-spacing: .12em; }
+.section-kicker > span:first-child { color: #b0c599; }
+.section-kicker i { width: 28px; height: 1px; background: #536c49; }
+.research-heading { padding: 8px 0 12px; align-items: center; gap: 26px; }
+.research-heading h2 { flex: none; margin: 0; font: 600 clamp(28px, 2.7vw, 40px)/1.12 var(--display); letter-spacing: -.055em; }
+.publication-summary, .publication-projects { font-size: 12px; line-height: 1.55; }
+.research-section .research-map { flex: 1; height: auto; min-height: 360px; }
+.research-section .map-stage { flex: 1; height: auto; min-height: 240px; }
+.research-footer { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-top: 6px; color: #758b7c; font: 8px/1.3 var(--mono); letter-spacing: .09em; }
+.research-footer > span:nth-child(2) { max-width: none; }
+
+/* Standalone preview: paper details / topic contents use a native dialog. */
+.slice-dialog { width: min(760px, calc(100vw - 32px)); max-height: 86svh; overflow: auto; margin: auto; padding: 26px; border: 1px solid #627b50; color: #e3ecd5; background: #182d23; }
+.slice-dialog::backdrop { background: #08150fc9; }
+.slice-dialog header { display: flex; align-items: flex-start; gap: 20px; }
+.slice-dialog h2 { flex: 1; margin: 0; font: 600 23px/1.45 var(--display); overflow-wrap: anywhere; }
+.slice-dialog form { margin: 0; }
+.slice-dialog form button { width: 32px; height: 32px; border: 1px solid #526a56; background: #243c2c; cursor: pointer; font-size: 22px; }
+.slice-dialog p { color: #bed0b7; font-size: 14px; line-height: 1.8; }
+.slice-dialog .paper-venue { color: #a9bd9b; font: 11px/1.7 var(--mono); }
+.paper-topics, .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.paper-topics span { padding: 4px 8px; border: 1px solid #405b44; color: #b5c8a3; font-size: 11px; }
+.paper-links a { padding: 8px 12px; border: 1px solid #627b50; color: var(--lime); font-size: 12px; text-decoration: none; }
+.topic-paper-list { display: grid; gap: 1px; margin: 20px 0 0; padding: 0; list-style: none; }
+.topic-paper-list button { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; padding: 13px 4px; border: 0; border-bottom: 1px solid #3a5242; color: #e3ecd5; background: transparent; text-align: left; cursor: pointer; }
+.topic-paper-list small { color: #9caf92; text-align: right; font: 10px/1.6 var(--mono); }
+
+@media (min-width: 1650px) {
+  .publication-summary, .publication-projects { font-size: 14px; }
+}
+@media (max-width: 1200px) {
+  .research-heading { display: block; }
+  .publication-overview { margin-top: 17px; text-align: left; }
+}
+@media (max-width: 980px) {
+  .slice-shell { padding: 16px; }
+  .research-section { height: calc(100svh - 32px); }
+}
+@media (max-width: 740px) {
+  .research-section { height: auto; min-height: 0; }
+  .research-section .research-content { height: auto; }
+  .research-section .research-map { flex: none; min-height: 580px; }
+  .research-section .map-stage { flex: none; height: 560px; }
+}
+@media (max-width: 580px) {
+  .slice-shell { padding: 12px; }
+  .research-section { padding: 13px 13px 10px; }
+  .research-section .research-map { min-height: 610px; }
+  .research-section .map-stage { height: 620px; }
+  .research-heading { padding: 7px 3px 10px; }
+  .research-heading h2 { font-size: 30px; }
+  .publication-summary, .publication-projects { font-size: 11px; }
+  .map-topic-chip button:first-child { font-size: 8px; }
+  .research-footer { font-size: 8px; gap: 8px; }
+  .slice-dialog { padding: 20px; }
+  .slice-dialog h2 { font-size: 19px; }
+}
+
+</style>
+</head>
+<body>
+  <main class="slice-shell" id="main-content">
+    <section class="portfolio-section research-section research-slide portfolio-slide" id="research" data-reading-section="papers" aria-labelledby="research-title">
+      <div class="section-inner research-content">
+        <div class="section-kicker"><span>02</span><i></i><span>PAPERS</span></div>
+        <div class="research-heading">
+          <h2 id="research-title" tabindex="-1">Publications</h2>
+          <div class="publication-overview">
+            <p class="publication-summary" id="publication-summary" aria-label="Publication and authorship stats"></p>
+            <p class="publication-projects">Large-scale model projects: <strong>Cosmos · ERNIE · Wan · WALL-X</strong></p>
+          </div>
+        </div>
+        <div class="research-map" id="theme-map" aria-label="可旋转的三维论文图谱"></div>
+        <div class="research-footer"><span><span id="unique-count">55</span> WORKS · <span id="field-count">8</span> TOPICS · 已收录 <span id="accepted-count">26</span> 篇发表 / 录用论文</span><span>点论文查看 · 多选主题高亮</span></div>
+      </div>
+    </section>
+  </main>
+  <dialog class="slice-dialog" id="slice-detail" aria-labelledby="slice-detail-title">
+    <header>
+      <h2 id="slice-detail-title"></h2>
+      <form method="dialog"><button type="submit" aria-label="关闭详情" autofocus>×</button></form>
+    </header>
+    <div id="slice-detail-content"></div>
+  </dialog>
+  <script>
+window.PROJECTS = [
+  {
+    "title": "FleetServe: Execution-Aware VLA Serving for Robot Fleets",
+    "venue": "arXiv preprint arXiv:2611.14969, 2026",
+    "image": "images/fleetserve.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2611.14969"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/xinfer"
+      }
+    ],
+    "arxiv": "2611.14969",
+    "id": "fleetserve",
+    "shortTitle": "FleetServe",
+    "summary": "面向机器人群的 VLA 推理服务框架，把执行状态纳入服务调度，提升多机器人部署时的吞吐与响应。",
+    "themes": [
+      "embodied",
+      "robotics",
+      "infra"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2611.14969",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/xinfer"
+      }
+    ]
+  },
+  {
+    "title": "DMuon-2: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication",
+    "venue": "arXiv preprint arXiv:2611.07084, 2026",
+    "image": "images/dmuon-2.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2611.07084"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/dmuon"
+      }
+    ],
+    "arxiv": "2611.07084",
+    "id": "dmuon-2",
+    "shortTitle": "DMuon-2",
+    "summary": "针对数据并行训练重新安排矩阵所有权与通信路径，让 Muon 优化器更容易扩展到大规模集群。",
+    "themes": [
+      "infra"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "infra",
+    "paper": "https://arxiv.org/pdf/2611.07084",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/dmuon"
+      }
+    ]
+  },
+  {
+    "title": "EgoJEPA: Beyond Retargeting for Dexterous Manipulation from Egocentric Videos",
+    "venue": "arXiv preprint arXiv:2610.20904, 2026",
+    "image": "images/egojepa.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2610.20904"
+      },
+      {
+        "label": "project page",
+        "url": "https://mengcaopku.github.io/EgoJEPA"
+      }
+    ],
+    "arxiv": "2610.20904",
+    "id": "egojepa",
+    "shortTitle": "EgoJEPA",
+    "summary": "从第一人称视频学习灵巧操作表征与动作，让机器人直接利用人类演示，而不只做动作重定向。",
+    "themes": [
+      "embodied",
+      "robotics",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2610.20904",
+    "destinations": [
+      {
+        "label": "project page",
+        "url": "https://mengcaopku.github.io/EgoJEPA"
+      }
+    ]
+  },
+  {
+    "title": "LatentQuant: Preserving the Policy-Facing Latent Contract under NVFP4 VAE Quantization",
+    "venue": "arXiv preprint arXiv:2610.03959, 2026",
+    "image": "images/latentquant.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2610.03959"
+      }
+    ],
+    "arxiv": "2610.03959",
+    "id": "latentquant",
+    "shortTitle": "LatentQuant",
+    "summary": "研究低比特 NVFP4 量化下如何保留 VAE 潜变量接口，使压缩后的视觉表征仍适用于下游策略。",
+    "themes": [
+      "infra",
+      "embodied"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "infra",
+    "paper": "https://arxiv.org/pdf/2610.03959",
+    "destinations": []
+  },
+  {
+    "title": "X-Planner: Event-Structured Task Planning for Embodied Intelligence",
+    "venue": "arXiv preprint arXiv:2609.25187, 2026",
+    "image": "images/x-planner.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2609.25187"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/Xplanner"
+      },
+      {
+        "label": "project page",
+        "url": "https://x-square-robot.github.io/Xplanner/"
+      },
+      {
+        "label": "Hugging Face",
+        "url": "https://huggingface.co/x-square-robot/X-Planner-9B-0916"
+      }
+    ],
+    "arxiv": "2609.25187",
+    "id": "x-planner",
+    "shortTitle": "X-Planner",
+    "summary": "以事件结构组织长程任务规划，把自然语言目标拆成可执行、可检查的具身行动序列。",
+    "themes": [
+      "embodied",
+      "robotics",
+      "llm"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [
+      "lead"
+    ],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2609.25187",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/Xplanner"
+      },
+      {
+        "label": "project page",
+        "url": "https://x-square-robot.github.io/Xplanner/"
+      },
+      {
+        "label": "Hugging Face",
+        "url": "https://huggingface.co/x-square-robot/X-Planner-9B-0916"
+      }
+    ]
+  },
+  {
+    "title": "WALL-SS: Scaling Long-horizon World Models via Next-Scale Autoregression",
+    "venue": "arXiv preprint arXiv:2608.26239, 2026",
+    "image": "images/wall-ss.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2608.26239"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-ss"
+      },
+      {
+        "label": "project page",
+        "url": "https://wall-ss.ws-robotics.workers.dev/"
+      }
+    ],
+    "arxiv": "2608.26239",
+    "id": "wall-ss",
+    "shortTitle": "WALL-SS",
+    "summary": "用逐尺度自回归生成扩展世界模型的时间跨度，面向长程、连贯的视觉与动作预测。",
+    "themes": [
+      "media",
+      "embodied",
+      "robotics",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [
+      "lead"
+    ],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/pdf/2608.26239",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-ss"
+      },
+      {
+        "label": "project page",
+        "url": "https://wall-ss.ws-robotics.workers.dev/"
+      }
+    ]
+  },
+  {
+    "title": "GaussianWAM: Distilling Geometry and Semantics from 3D Gaussian Fields into World-Action Models",
+    "venue": "arXiv preprint arXiv:2608.24714, 2026",
+    "image": "images/gaussianwam.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2608.24714"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/TuojingAI/GaussianWAM"
+      },
+      {
+        "label": "project page",
+        "url": "https://tuojingai.github.io/GaussianWAM-project-page/"
+      }
+    ],
+    "arxiv": "2608.24714",
+    "id": "gaussianwam",
+    "shortTitle": "GaussianWAM",
+    "summary": "把 3D Gaussian 场中的几何与语义蒸馏到 World-Action Model，连接三维场景表示与机器人动作。",
+    "themes": [
+      "3d",
+      "embodied",
+      "robotics",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/pdf/2608.24714",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/TuojingAI/GaussianWAM"
+      },
+      {
+        "label": "project page",
+        "url": "https://tuojingai.github.io/GaussianWAM-project-page/"
+      }
+    ]
+  },
+  {
+    "title": "XPolicyLab: A Unified Standard and Open Ecosystem for Robot Policy Evaluation and Deployment",
+    "venue": "arXiv preprint arXiv:2608.09892, 2026",
+    "image": "images/xpolicylab.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2608.09892"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/XPolicyLab/XPolicyLab"
+      },
+      {
+        "label": "project page",
+        "url": "https://xpolicylab.github.io/"
+      }
+    ],
+    "arxiv": "2608.09892",
+    "id": "xpolicylab",
+    "shortTitle": "XPolicyLab",
+    "summary": "提供统一的机器人策略评测与部署规范，打通基准、工具和真实机器人运行流程。",
+    "themes": [
+      "embodied",
+      "robotics",
+      "infra"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2608.09892",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/XPolicyLab/XPolicyLab"
+      },
+      {
+        "label": "project page",
+        "url": "https://xpolicylab.github.io/"
+      }
+    ]
+  },
+  {
+    "title": "ROAD: Reciprocal-Objective Alignment of Discriminative Semantics for 3D Shape Generation",
+    "venue": "arXiv preprint arXiv:2607.28581, 2026",
+    "image": "images/road.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2607.28581"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/H-EmbodVis/ROAD"
+      },
+      {
+        "label": "project page",
+        "url": "https://h-embodvis.github.io/ROAD/"
+      }
+    ],
+    "arxiv": "2607.28581",
+    "id": "road",
+    "shortTitle": "ROAD",
+    "summary": "通过互反目标对齐判别式语义与生成过程，改善 3D 形状生成的语义一致性。",
+    "themes": [
+      "3d"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/pdf/2607.28581",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/H-EmbodVis/ROAD"
+      },
+      {
+        "label": "project page",
+        "url": "https://h-embodvis.github.io/ROAD/"
+      }
+    ]
+  },
+  {
+    "title": "HOST: Robots Acquire Manipulation Skills in Seconds from a Single Human Video",
+    "venue": "arXiv preprint arXiv:2607.20033, 2026",
+    "image": "images/host.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2607.20033"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/CGuangyan-BIT/HOST"
+      },
+      {
+        "label": "project page",
+        "url": "https://host-site.host-robotics.workers.dev/"
+      },
+      {
+        "label": "Hugging Face",
+        "url": "https://huggingface.co/papers/2607.20033"
+      }
+    ],
+    "arxiv": "2607.20033",
+    "id": "host",
+    "shortTitle": "HOST",
+    "summary": "从单段人类视频快速提取操作技能，让机器人在少量演示下获得可迁移的抓取与操控行为。",
+    "themes": [
+      "embodied",
+      "robotics",
+      "media",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [
+      "lead"
+    ],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2607.20033",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/CGuangyan-BIT/HOST"
+      },
+      {
+        "label": "project page",
+        "url": "https://host-site.host-robotics.workers.dev/"
+      },
+      {
+        "label": "Hugging Face",
+        "url": "https://huggingface.co/papers/2607.20033"
+      }
+    ]
+  },
+  {
+    "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+    "venue": "arXiv preprint arXiv:2607.04434, 2026",
+    "image": "images/robodojo.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2607.04434"
+      },
+      {
+        "label": "benchmark code",
+        "url": "https://github.com/RoboDojo-Benchmark/RoboDojo"
+      },
+      {
+        "label": "XPolicyLab code",
+        "url": "https://github.com/XPolicyLab/XPolicyLab"
+      },
+      {
+        "label": "project page",
+        "url": "https://robodojo-benchmark.com/"
+      },
+      {
+        "label": "leaderboard",
+        "url": "https://robodojo-benchmark.com/LeaderBoard"
+      }
+    ],
+    "arxiv": "2607.04434",
+    "id": "robodojo",
+    "shortTitle": "RoboDojo",
+    "summary": "构建覆盖仿真与真实环境的通用操作基准，统一比较机器人策略在多任务中的能力。",
+    "themes": [
+      "embodied",
+      "robotics"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2607.04434",
+    "destinations": [
+      {
+        "label": "benchmark code",
+        "url": "https://github.com/RoboDojo-Benchmark/RoboDojo"
+      },
+      {
+        "label": "XPolicyLab code",
+        "url": "https://github.com/XPolicyLab/XPolicyLab"
+      },
+      {
+        "label": "project page",
+        "url": "https://robodojo-benchmark.com/"
+      },
+      {
+        "label": "leaderboard",
+        "url": "https://robodojo-benchmark.com/LeaderBoard"
+      }
+    ]
+  },
+  {
+    "title": "SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects",
+    "venue": "arXiv preprint arXiv:2607.04234, 2026",
+    "image": "images/softvtbench.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2607.04234"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/TuojingAI/SoftVTBench"
+      },
+      {
+        "label": "project page",
+        "url": "https://softvtbench.github.io/"
+      }
+    ],
+    "arxiv": "2607.04234",
+    "id": "softvtbench",
+    "shortTitle": "SoftVTBench",
+    "summary": "用视觉与触觉共同评测软体物体操作，重点考察受力、安全与物理约束下的策略表现。",
+    "themes": [
+      "embodied",
+      "robotics"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2607.04234",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/TuojingAI/SoftVTBench"
+      },
+      {
+        "label": "project page",
+        "url": "https://softvtbench.github.io/"
+      }
+    ]
+  },
+  {
+    "title": "DMuon: Efficient Distributed Muon Training with Near-Adam Overhead",
+    "venue": "arXiv preprint arXiv:2606.27153, 2026",
+    "image": "images/dmuon.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2606.27153"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      }
+    ],
+    "arxiv": "2606.27153",
+    "id": "dmuon",
+    "shortTitle": "DMuon",
+    "summary": "面向分布式训练优化 Muon 的通信与同步开销，使其在接近 Adam 的系统成本下扩展训练。",
+    "themes": [
+      "infra"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "infra",
+    "paper": "https://arxiv.org/pdf/2606.27153",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      }
+    ]
+  },
+  {
+    "title": "RKNN-Toolkit2: Model Conversion, Quantization and Deployment for Rockchip NPU",
+    "venue": "Rockchip · RKNN-Toolkit2",
+    "image": "research/captures/rknn-toolkit2-overview.webp",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/airockchip/rknn-toolkit2"
+      }
+    ],
+    "id": "rknn-toolkit2",
+    "shortTitle": "RKNN-Toolkit2",
+    "summary": "面向 Rockchip NPU 的模型转换、量化、精度分析与板端部署工具链，连接训练框架与 C/C++、Python 推理接口。",
+    "themes": [
+      "infra"
+    ],
+    "status": "software",
+    "roles": [],
+    "primaryTheme": "infra",
+    "destinations": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/airockchip/rknn-toolkit2"
+      },
+      {
+        "label": "官方文档",
+        "url": "https://github.com/airockchip/rknn-toolkit2/tree/2c723177a94fac65cbc036d722907ddbc91980cf/doc"
+      }
+    ]
+  },
+  {
+    "title": "MemoryWAM: Efficient World Action Modeling with Persistent Memory",
+    "venue": "arXiv preprint arXiv:2606.20562, 2026",
+    "image": "images/memorywam.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2606.20562"
+      },
+      {
+        "label": "project page",
+        "url": "https://yangsizhe.github.io/MemoryWAM/"
+      }
+    ],
+    "arxiv": "2606.20562",
+    "id": "memorywam",
+    "shortTitle": "MemoryWAM",
+    "summary": "为 World-Action Model 增加持久记忆，在长时间交互中保留历史状态并生成更连贯的动作。",
+    "themes": [
+      "embodied",
+      "robotics",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2606.20562",
+    "destinations": [
+      {
+        "label": "project page",
+        "url": "https://yangsizhe.github.io/MemoryWAM/"
+      }
+    ]
+  },
+  {
+    "title": "Wall-OSS-0.5 Technical Report: Pretrain Once, Act Anywhere",
+    "venue": "arXiv preprint arXiv:2605.30877, 2026",
+    "image": "images/wall-oss-0-5.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2605.30877"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      },
+      {
+        "label": "project page",
+        "url": "https://x2robot.com/en/oss"
+      }
+    ],
+    "arxiv": "2605.30877",
+    "id": "wall-oss-0-5",
+    "shortTitle": "WALL-OSS 0.5",
+    "summary": "介绍可复用的开源具身基础模型，通过一次预训练覆盖多种机器人和操作任务。",
+    "themes": [
+      "embodied",
+      "llm",
+      "robotics"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2605.30877",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      },
+      {
+        "label": "project page",
+        "url": "https://x2robot.com/en/oss"
+      }
+    ]
+  },
+  {
+    "title": "WALL-WM: Carving World Action Modeling at the Event Joints",
+    "venue": "ECCV 2026 Workshop [Best Paper]",
+    "image": "images/wall-wm.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2606.01955"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      },
+      {
+        "label": "X",
+        "url": "https://x.com/XSquareRobot/status/2060238687410262118"
+      }
+    ],
+    "arxiv": "2606.01955",
+    "id": "wall-wm",
+    "shortTitle": "WALL-WM",
+    "summary": "围绕关键事件节点建模世界状态与动作变化，提升具身世界模型对交互过程的刻画能力。",
+    "themes": [
+      "media",
+      "embodied",
+      "robotics",
+      "worldmodel",
+      "llm"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [
+      "lead",
+      "first"
+    ],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/pdf/2606.01955",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      },
+      {
+        "label": "X",
+        "url": "https://x.com/XSquareRobot/status/2060238687410262118"
+      }
+    ]
+  },
+  {
+    "title": "TIE: Time Interval Encoding for Video Generation over Events",
+    "venue": "arXiv preprint arXiv:2605.10543, 2026",
+    "image": "images/tie.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2605.10543"
+      },
+      {
+        "label": "project page",
+        "url": "https://matrixteam-ai.github.io/pages/TIE/"
+      }
+    ],
+    "arxiv": "2605.10543",
+    "id": "tie",
+    "shortTitle": "TIE",
+    "summary": "为事件驱动的视频生成显式编码时间区间，改善不规则时间跨度下的运动与事件一致性。",
+    "themes": [
+      "media"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/pdf/2605.10543",
+    "destinations": [
+      {
+        "label": "project page",
+        "url": "https://matrixteam-ai.github.io/pages/TIE/"
+      }
+    ]
+  },
+  {
+    "title": "GaussianDream: A Feed-Forward 3D Gaussian World Model for Robotic Manipulation",
+    "venue": "arXiv preprint arXiv:2605.20752, 2026",
+    "image": "images/gaussiandream.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2605.20752"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/TuojingAI/GaussianDream"
+      }
+    ],
+    "arxiv": "2605.20752",
+    "id": "gaussiandream",
+    "shortTitle": "GaussianDream",
+    "summary": "用前馈 3D Gaussian 世界模型预测机器人操作中的场景变化，为动作决策提供三维状态。",
+    "themes": [
+      "3d",
+      "embodied",
+      "robotics",
+      "worldmodel",
+      "llm"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/abs/2605.20752",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/TuojingAI/GaussianDream"
+      }
+    ]
+  },
+  {
+    "title": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+    "venue": "arXiv preprint arXiv:2604.13001, 2026",
+    "image": "images/xrzero-g0.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2604.13001"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/XRZero-G0"
+      }
+    ],
+    "arxiv": "2604.13001",
+    "id": "xrzero-g0",
+    "shortTitle": "XRZero-G0",
+    "summary": "发布 XRZero-G0 灵巧操作系统与数据资源，探索接口设计、数据质量和数据配比对操作能力的影响。",
+    "themes": [
+      "robotics",
+      "embodied"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "robotics",
+    "paper": "https://arxiv.org/pdf/2604.13001",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/XRZero-G0"
+      }
+    ]
+  },
+  {
+    "title": "ManipArena: Comprehensive Real-world Evaluation of Reasoning-Oriented Generalist Robot Manipulation",
+    "venue": "arXiv preprint arXiv:2603.28545, 2026",
+    "image": "images/maniparena.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2603.28545"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/maniparena/maniparena-repo"
+      }
+    ],
+    "arxiv": "2603.28545",
+    "id": "maniparena",
+    "shortTitle": "ManipArena",
+    "summary": "在真实机器人上评测需要推理的通用操作任务，衡量策略面对长程目标和复杂场景的表现。",
+    "themes": [
+      "robotics",
+      "embodied"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "robotics",
+    "paper": "https://arxiv.org/pdf/2603.28545",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/maniparena/maniparena-repo"
+      }
+    ]
+  },
+  {
+    "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
+    "venue": "arXiv preprint arXiv:2603.19235, 2026",
+    "image": "images/generation-models-know-space.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2603.19235"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/H-EmbodVis/VEGA-3D"
+      }
+    ],
+    "arxiv": "2603.19235",
+    "id": "generation-models-know-space",
+    "shortTitle": "Generation Models Know Space",
+    "summary": "挖掘生成模型内部的隐式三维先验，用于提升空间关系与三维场景理解。",
+    "themes": [
+      "3d",
+      "worldmodel",
+      "llm",
+      "embodied",
+      "robotics"
+    ],
+    "year": 2026,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/abs/2603.19235",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/H-EmbodVis/VEGA-3D"
+      }
+    ]
+  },
+  {
+    "title": "Visual Autoregressive Modeling via Next Focus Prediction",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/fvar.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2511.18838"
+      },
+      {
+        "label": "project page",
+        "url": "https://shalfun.github.io/FVAR"
+      }
+    ],
+    "arxiv": "2511.18838",
+    "id": "fvar",
+    "shortTitle": "FVAR",
+    "summary": "提出 Next Focus Prediction 视觉自回归范式，按模型关注区域逐步生成图像内容。",
+    "themes": [
+      "media"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/abs/2511.18838",
+    "destinations": [
+      {
+        "label": "project page",
+        "url": "https://shalfun.github.io/FVAR"
+      }
+    ]
+  },
+  {
+    "title": "FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/faithfusion.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2511.21113"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/wangyuanbiubiubiu/FaithFusion"
+      },
+      {
+        "label": "project page",
+        "url": "https://shalfun.github.io/faithfusion"
+      }
+    ],
+    "arxiv": "2511.21113",
+    "id": "faithfusion",
+    "shortTitle": "FaithFusion",
+    "summary": "以像素级信息增益协调重建与生成，在 3D Gaussian 场景中融合观测证据与生成先验。",
+    "themes": [
+      "3d",
+      "media",
+      "worldmodel",
+      "driving"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/abs/2511.21113",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/wangyuanbiubiubiu/FaithFusion"
+      },
+      {
+        "label": "project page",
+        "url": "https://shalfun.github.io/faithfusion"
+      }
+    ]
+  },
+  {
+    "title": "ViLoMeo: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/vilomeo.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2511.21678"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/weihaobo/ViLoMeo"
+      },
+      {
+        "label": "project page",
+        "url": "https://weihao-bo.github.io/ViLoMeo-page/"
+      }
+    ],
+    "arxiv": "2511.21678",
+    "id": "vilomeo",
+    "shortTitle": "ViLoMeo",
+    "summary": "让多模态智能体持续扩展并修正语义记忆，以支持开放环境中的视觉理解与任务执行。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/abs/2511.21678",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/weihaobo/ViLoMeo"
+      },
+      {
+        "label": "project page",
+        "url": "https://weihao-bo.github.io/ViLoMeo-page/"
+      }
+    ]
+  },
+  {
+    "title": "Descriptive Caption Enhancement with Visual Specialists for Multimodal Perception",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/visual-specialists.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2412.14233"
+      }
+    ],
+    "arxiv": "2412.14233",
+    "id": "visual-specialists",
+    "shortTitle": "Visual Specialists",
+    "summary": "调用视觉专长模块补充图像细节，生成更准确、信息更丰富的多模态描述。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/pdf/2412.14233",
+    "destinations": []
+  },
+  {
+    "title": "FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denoising",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/fm-steer.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Song_FM-Steer_Enhance_Generalist_Policies_with_Value-Guided_Cascaded_Denoising_CVPR_2026_paper.html"
+      },
+      {
+        "label": "project page",
+        "url": "https://hume-vla.github.io"
+      }
+    ],
+    "arxiv": null,
+    "id": "fm-steer",
+    "shortTitle": "FM-Steer",
+    "summary": "用价值信号引导级联去噪过程，提升通用机器人策略生成动作时的质量与可控性。",
+    "themes": [
+      "robotics",
+      "embodied"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "robotics",
+    "paper": "https://openaccess.thecvf.com/content/CVPR2026/html/Song_FM-Steer_Enhance_Generalist_Policies_with_Value-Guided_Cascaded_Denoising_CVPR_2026_paper.html",
+    "destinations": [
+      {
+        "label": "project page",
+        "url": "https://hume-vla.github.io"
+      }
+    ]
+  },
+  {
+    "title": "When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/when-numbers-speak.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2604.08546"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/H-EmbodVis/NUMINA"
+      }
+    ],
+    "arxiv": "2604.08546",
+    "id": "when-numbers-speak",
+    "shortTitle": "When Numbers Speak",
+    "summary": "改善文生视频中数字词语与画面物体数量的对齐，减少生成结果中的计数错误。",
+    "themes": [
+      "media"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/abs/2604.08546",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/H-EmbodVis/NUMINA"
+      }
+    ]
+  },
+  {
+    "title": "ARGUS: A Training‑free Geometry‑aware Universal Method for Fine-grained 3D Asset Generation",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2026",
+    "image": "images/argus.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://github.com/Mingyang-Du/Materials/blob/main/ARGUS_CVPR_26_.pdf"
+      },
+      {
+        "label": "作者稿 PDF",
+        "url": "research/pdfs/argus.pdf"
+      }
+    ],
+    "arxiv": null,
+    "id": "argus",
+    "shortTitle": "ARGUS",
+    "summary": "无需额外训练地引入几何约束，生成结构更完整、细节更精细的 3D 资产。",
+    "themes": [
+      "3d"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://github.com/Mingyang-Du/Materials/blob/main/ARGUS_CVPR_26_.pdf",
+    "destinations": [
+      {
+        "label": "作者稿 PDF",
+        "url": "research/pdfs/argus.pdf"
+      }
+    ]
+  },
+  {
+    "title": "BUGS: Universal 3D Gaussian Splatting with a Bi-directional Gaussian Growing Mechanism",
+    "venue": "IEEE Transactions on Multimedia (TMM), 2026",
+    "image": "images/bugs.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://ieeexplore.ieee.org/document/11417316"
+      }
+    ],
+    "arxiv": null,
+    "id": "bugs",
+    "shortTitle": "BUGS",
+    "summary": "通过双向 Gaussian 生长机制扩展 3D Gaussian Splatting，适配不同场景并增强几何覆盖。",
+    "themes": [
+      "3d"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://ieeexplore.ieee.org/document/11417316",
+    "destinations": []
+  },
+  {
+    "title": "Artemis: Structured Visual Reasoning for Perception Policy Learning",
+    "venue": "International Conference on Machine Learning (ICML), 2026",
+    "image": "images/artemis.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2512.01988"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/WayneTomas/Artemis"
+      },
+      {
+        "label": "project page",
+        "url": "https://vi-ocean.github.io/projects/artemis"
+      }
+    ],
+    "arxiv": "2512.01988",
+    "id": "artemis",
+    "shortTitle": "Artemis",
+    "summary": "用结构化视觉推理把感知结果转化为策略学习信号，连接视觉理解与任务决策。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [
+      "lead"
+    ],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/pdf/2512.01988",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/WayneTomas/Artemis"
+      },
+      {
+        "label": "project page",
+        "url": "https://vi-ocean.github.io/projects/artemis"
+      }
+    ]
+  },
+  {
+    "title": "Benchmarking Dense and Indiscernible Object Counting with Blueberries",
+    "venue": "International Conference on Machine Learning (ICML), 2026",
+    "image": "images/blueberries.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://proceedings.mlr.press/v306/bo26a.html"
+      },
+      {
+        "label": "完整 PDF",
+        "url": "research/pdfs/blueberries.pdf"
+      },
+      {
+        "label": "数据集",
+        "url": "https://huggingface.co/datasets/weihao-bo/DIOCblueberry"
+      }
+    ],
+    "arxiv": null,
+    "id": "blueberries",
+    "shortTitle": "Blueberries",
+    "summary": "构建密集、遮挡、伪装的蓝莓计数基准 DIOCblueberry，并以 CLIP 语义掩码、对比学习与边界感知裁剪改善计数。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [
+      "lead"
+    ],
+    "primaryTheme": "llm",
+    "paper": "https://proceedings.mlr.press/v306/bo26a.html",
+    "destinations": [
+      {
+        "label": "完整 PDF",
+        "url": "research/pdfs/blueberries.pdf"
+      },
+      {
+        "label": "数据集",
+        "url": "https://huggingface.co/datasets/weihao-bo/DIOCblueberry"
+      }
+    ]
+  },
+  {
+    "title": "DrivingDiffusion: Layout-Guided Multi-View Driving Scenarios Video Generation with Latent Diffusion Model",
+    "venue": "European Conference on Computer Vision (ECCV), 2024",
+    "image": "images/drivingdiffusion.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2310.07771"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ],
+    "arxiv": "2310.07771",
+    "id": "drivingdiffusion",
+    "shortTitle": "DrivingDiffusion",
+    "summary": "利用场景布局条件和潜空间扩散生成多视角驾驶视频，控制道路结构与动态交通场景。",
+    "themes": [
+      "media",
+      "driving",
+      "worldmodel"
+    ],
+    "year": 2024,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/abs/2310.07771",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ]
+  },
+  {
+    "title": "MPDrive: Improving Spatial Understanding with Marker-Based Prompt Learning for Autonomous Driving",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2025 [Highlight]",
+    "image": "images/mpdrive.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2504.00379"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ],
+    "arxiv": "2504.00379",
+    "id": "mpdrive",
+    "shortTitle": "MPDrive",
+    "summary": "通过标记提示增强自动驾驶模型的空间理解，使视觉特征更直接对应驾驶场景中的位置关系。",
+    "themes": [
+      "driving",
+      "llm"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "driving",
+    "paper": "https://arxiv.org/pdf/2504.00379",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ]
+  },
+  {
+    "title": "U-ViLAR: Uncertainty-Aware Visual Localization for Autonomous Driving via Differentiable Association and Registration",
+    "venue": "International Conference on Computer Vision (ICCV), 2025",
+    "image": "images/u-vilar.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://www.arxiv.org/abs/2507.04503"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ],
+    "arxiv": "2507.04503",
+    "id": "u-vilar",
+    "shortTitle": "U-ViLAR",
+    "summary": "将不确定性建模融入可微匹配与配准，提升自动驾驶视觉定位在复杂场景中的稳健性。",
+    "themes": [
+      "driving"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "driving",
+    "paper": "https://www.arxiv.org/abs/2507.04503",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ]
+  },
+  {
+    "title": "Drag Your Gaussian: Effective Drag-Based Editing with Score Distillation for 3D Gaussian Splatting",
+    "venue": "ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques (SIGGRAPH), 2025",
+    "image": "images/drag-your-gaussian.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2501.18672"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/Quyans/Drag-Your-Gaussian"
+      }
+    ],
+    "arxiv": "2501.18672",
+    "id": "drag-your-gaussian",
+    "shortTitle": "Drag Your Gaussian",
+    "summary": "用拖拽式交互和分数蒸馏编辑 3D Gaussian 场景，让用户能直接操纵三维对象与结构。",
+    "themes": [
+      "3d"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/pdf/2501.18672",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/Quyans/Drag-Your-Gaussian"
+      }
+    ]
+  },
+  {
+    "title": "DriVerse: Navigation World Model for Driving Simulation via Multimodal Trajectory Prompting and Motion Alignment",
+    "venue": "ACM International Conference on Multimedia (ACM MM), 2025",
+    "image": "images/driverse.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2504.18576"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DriVerse"
+      }
+    ],
+    "arxiv": "2504.18576",
+    "id": "driverse",
+    "shortTitle": "DriVerse",
+    "summary": "以多模态轨迹提示和运动对齐驱动驾驶世界模型，生成适合导航仿真的未来场景。",
+    "themes": [
+      "media",
+      "driving",
+      "worldmodel"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/pdf/2504.18576",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DriVerse"
+      }
+    ]
+  },
+  {
+    "title": "Video4Edit: Viewing Image Editing as a Degenerate Temporal Process",
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026",
+    "image": "images/video4edit.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2511.18131"
+      },
+      {
+        "label": "project page",
+        "url": "https://shalfun.github.io/video4edit"
+      }
+    ],
+    "arxiv": "2511.18131",
+    "id": "video4edit",
+    "shortTitle": "Video4Edit",
+    "summary": "将图像编辑视作退化的视频时间过程，借用视频生成模型实现可控的图像修改。",
+    "themes": [
+      "media"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/abs/2511.18131",
+    "destinations": [
+      {
+        "label": "project page",
+        "url": "https://shalfun.github.io/video4edit"
+      }
+    ]
+  },
+  {
+    "title": "ERNIE 4.5 Technical Report",
+    "venue": "Technical Report, 2025",
+    "image": "images/ernie-4-5.webp",
+    "links": [
+      {
+        "label": "code",
+        "url": "https://github.com/paddlepaddle/ernie"
+      },
+      {
+        "label": "blog",
+        "url": "https://ernie.baidu.com/research/posts/ernie4.5/"
+      },
+      {
+        "label": "Hugging Face",
+        "url": "https://huggingface.co/baidu/ERNIE-4.5-VL-28B-A3B-Thinking"
+      }
+    ],
+    "arxiv": null,
+    "id": "ernie-4-5",
+    "shortTitle": "ERNIE 4.5",
+    "summary": "介绍百度 ERNIE 4.5 系列通用基础模型及其文本、图像与视频理解能力。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2025,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": null,
+    "destinations": [
+      {
+        "label": "官方资料",
+        "url": "https://ernie.baidu.com/research/posts/ernie4.5/"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/PaddlePaddle/ERNIE"
+      }
+    ]
+  },
+  {
+    "title": "WALL-OSS: Igniting VLMs toward the Embodied Space",
+    "venue": "arXiv preprint arXiv:2509.11766, 2025",
+    "image": "images/wall-oss.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2509.11766"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      }
+    ],
+    "arxiv": "2509.11766",
+    "id": "wall-oss",
+    "shortTitle": "WALL-OSS",
+    "summary": "面向具身任务训练并开放视觉语言模型，推动多模态理解与机器人行动衔接。",
+    "themes": [
+      "embodied",
+      "llm",
+      "robotics"
+    ],
+    "year": 2025,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "embodied",
+    "paper": "https://arxiv.org/pdf/2509.11766",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/X-Square-Robot/wall-x"
+      }
+    ]
+  },
+  {
+    "title": "Towards Support-Effective Fabrication of 3D Mesh Generation with Preference Alignment",
+    "venue": "IEEE Robotics and Automation Letters (RAL), 2025",
+    "image": "images/support-effective-3d.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/html/2511.16434v1"
+      },
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2511.16434"
+      }
+    ],
+    "arxiv": "2511.16434",
+    "alternateTitle": "From Prompts to Printable Models: Support-Effective 3D Generation via Offset Direct Preference Optimization",
+    "id": "support-effective-3d",
+    "shortTitle": "Support-Effective 3D",
+    "summary": "通过偏好对齐提升网格生成的可制造性，让文本生成的 3D 模型更适合实际打印。",
+    "themes": [
+      "3d"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/html/2511.16434v1",
+    "destinations": []
+  },
+  {
+    "title": "BevWorld: A Multimodal World Model for Autonomous Driving via Unified BEV Latent Space",
+    "venue": "arXiv preprint arXiv:2407.05679, 2024",
+    "image": "images/bevworld.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2407.05679"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/BevWorld"
+      }
+    ],
+    "arxiv": "2407.05679",
+    "id": "bevworld",
+    "shortTitle": "BevWorld",
+    "summary": "在统一鸟瞰图潜空间中融合多模态感知与未来预测，构建面向驾驶场景的世界模型。",
+    "themes": [
+      "driving",
+      "media",
+      "worldmodel"
+    ],
+    "year": 2024,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "driving",
+    "paper": "https://arxiv.org/abs/2407.05679",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/BevWorld"
+      }
+    ]
+  },
+  {
+    "title": "DualDiff+: Dual-Branch Diffusion for High-Fidelity Video Generation with Reward Guidance",
+    "venue": "IEEE International Conference on Robotics and Automation (ICRA), 2025",
+    "image": "images/dualdiff.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2503.03689"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/yangzhaojason/DualDiff"
+      }
+    ],
+    "arxiv": "2503.03689",
+    "id": "dualdiff",
+    "shortTitle": "DualDiff+",
+    "summary": "用双分支扩散与奖励引导提升视频生成的视觉质量和文本条件对齐。",
+    "themes": [
+      "media"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "media",
+    "paper": "https://arxiv.org/pdf/2503.03689",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/yangzhaojason/DualDiff"
+      }
+    ]
+  },
+  {
+    "title": "The Role of World Models in Shaping Autonomous Driving: A Comprehensive Survey",
+    "venue": "International Joint Conference on Artificial Intelligence (IJCAI), 2024",
+    "image": "images/world-models-for-ad.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2502.10498"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/LMD0311/Awesome-World-Model"
+      }
+    ],
+    "arxiv": "2502.10498",
+    "id": "world-models-for-ad",
+    "shortTitle": "World Models for AD",
+    "summary": "综述世界模型在自动驾驶中的表示、训练、评测与应用，梳理未来研究方向。",
+    "themes": [
+      "driving",
+      "worldmodel"
+    ],
+    "year": 2024,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "driving",
+    "paper": "https://arxiv.org/pdf/2502.10498",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/LMD0311/Awesome-World-Model"
+      }
+    ]
+  },
+  {
+    "title": "CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception",
+    "venue": "International Conference on Computer Vision (ICCV), 2025 [Highlight]",
+    "image": "images/cooptrack.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2507.19239"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/zhongjiaru/CoopTrack"
+      }
+    ],
+    "arxiv": "2507.19239",
+    "id": "cooptrack",
+    "shortTitle": "CoopTrack",
+    "summary": "研究协同车辆的端到端序列感知，在通信与计算受限条件下追踪共享环境信息。",
+    "themes": [
+      "driving"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "driving",
+    "paper": "https://arxiv.org/abs/2507.19239",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/zhongjiaru/CoopTrack"
+      }
+    ]
+  },
+  {
+    "title": "VRP-SAM: SAM with visual reference prompt",
+    "venue": "Computer Vision and Pattern Recognition Conference (CVPR), 2024",
+    "image": "images/vrp-sam.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2402.17726"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/syp2ysy/VRP-SAM"
+      }
+    ],
+    "arxiv": "2402.17726",
+    "id": "vrp-sam",
+    "shortTitle": "VRP-SAM",
+    "summary": "为 Segment Anything 加入视觉参考提示，让分割结果能依据示例对象进行匹配。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2024,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/abs/2402.17726",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/syp2ysy/VRP-SAM"
+      }
+    ]
+  },
+  {
+    "title": "Exploring effective factors for improving visual in-context learning",
+    "venue": "IEEE Transactions on Image Processing (TIP), 2025",
+    "image": "images/visual-in-context-learning.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/abs/2304.04748"
+      }
+    ],
+    "arxiv": "2304.04748",
+    "id": "visual-in-context-learning",
+    "shortTitle": "Visual In-Context Learning",
+    "summary": "系统分析示例选择、视觉线索等因素如何影响多模态模型的视觉上下文学习效果。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/abs/2304.04748",
+    "destinations": []
+  },
+  {
+    "title": "NeRF-DetS: Enhanced Adaptive Spatial-Wise Sampling and View-Wise Fusion Strategies for NeRF-Based Indoor Multi-View 3D Object Detection",
+    "venue": "International Joint Conference on Artificial Intelligence (IJCAI), 2024",
+    "image": "images/nerf-dets.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2404.13921"
+      }
+    ],
+    "arxiv": "2404.13921",
+    "id": "nerf-dets",
+    "shortTitle": "NeRF-DetS",
+    "summary": "改进 NeRF 场景中的空间采样与跨视角融合，用于室内多视角三维目标检测。",
+    "themes": [
+      "3d"
+    ],
+    "year": 2024,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "3d",
+    "paper": "https://arxiv.org/pdf/2404.13921",
+    "destinations": []
+  },
+  {
+    "title": "Revisiting MLLMs: An In-Depth Analysis of Image Classification Abilities",
+    "venue": "arXiv preprint arXiv:2412.16418, 2024",
+    "image": "images/revisiting-mllms.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2412.16418"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ],
+    "arxiv": "2412.16418",
+    "id": "revisiting-mllms",
+    "shortTitle": "Revisiting MLLMs",
+    "summary": "分析多模态大模型在图像分类任务中的能力边界、偏差与影响因素。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2024,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/pdf/2412.16418",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/shalfun/DrivingDiffusion"
+      }
+    ]
+  },
+  {
+    "title": "Learning Multiple Probabilistic Decisions from Latent World Model in Autonomous Driving",
+    "venue": "IEEE International Conference on Robotics and Automation (ICRA), 2025",
+    "image": "images/probabilistic-decisions.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2409.15730"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/syp2ysy/EDC"
+      }
+    ],
+    "arxiv": "2409.15730",
+    "id": "probabilistic-decisions",
+    "shortTitle": "Probabilistic Decisions",
+    "summary": "从潜空间驾驶世界模型采样多种可能决策，显式表达未来行为的不确定性。",
+    "themes": [
+      "driving",
+      "worldmodel"
+    ],
+    "year": 2025,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "driving",
+    "paper": "https://arxiv.org/pdf/2409.15730",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/syp2ysy/EDC"
+      }
+    ]
+  },
+  {
+    "title": "UniFuture: A Unified Driving World Model for Future Generation and Perception",
+    "venue": "IEEE International Conference on Robotics and Automation (ICRA), 2026",
+    "image": "images/unifuture.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2503.13587"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/dk-liang/UniFuture"
+      }
+    ],
+    "arxiv": "2503.13587",
+    "id": "unifuture",
+    "shortTitle": "UniFuture",
+    "summary": "在统一框架内联合生成驾驶未来并完成场景感知，连接预测与理解任务。",
+    "themes": [
+      "driving",
+      "media",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "published",
+    "roles": [],
+    "primaryTheme": "driving",
+    "paper": "https://arxiv.org/pdf/2503.13587",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/dk-liang/UniFuture"
+      }
+    ]
+  },
+  {
+    "title": "Vision Remember: Alleviating Visual Forgetting in Efficient MLLM with Vision Feature Resample",
+    "venue": "arXiv preprint arXiv:2506.03928, 2025",
+    "image": "images/vision-remember.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://arxiv.org/pdf/2506.03928"
+      },
+      {
+        "label": "code",
+        "url": "https://github.com/dk-liang/UniFuture"
+      }
+    ],
+    "arxiv": "2506.03928",
+    "id": "vision-remember",
+    "shortTitle": "Vision Remember",
+    "summary": "通过视觉特征重采样缓解高效多模态模型中的视觉信息遗忘，保留图像细节。",
+    "themes": [
+      "llm"
+    ],
+    "year": 2025,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "llm",
+    "paper": "https://arxiv.org/pdf/2506.03928",
+    "destinations": [
+      {
+        "label": "code",
+        "url": "https://github.com/dk-liang/UniFuture"
+      }
+    ]
+  },
+  {
+    "title": "Controllable Panoramic Video Generation with 360-Degree Motion Consistency",
+    "venue": "SSRN (Elsevier), 2025",
+    "image": "images/360-video-generation.webp",
+    "links": [
+      {
+        "label": "paper",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433210"
+      },
+      {
+        "label": "项目资料",
+        "url": "https://github.com/icedCoffe001/OmniPano.github.io"
+      },
+      {
+        "label": "代码仓库",
+        "url": "https://github.com/icedCoffe001/OmniPano"
+      }
+    ],
+    "arxiv": null,
+    "id": "360-video-generation",
+    "shortTitle": "360° Video Generation",
+    "summary": "生成可控的 360 度全景视频，并约束跨视角运动保持一致。",
+    "themes": [
+      "media"
+    ],
+    "year": 2025,
+    "status": "preprint",
+    "roles": [],
+    "primaryTheme": "media",
+    "paper": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5433210",
+    "destinations": [
+      {
+        "label": "项目资料",
+        "url": "https://github.com/icedCoffe001/OmniPano.github.io"
+      },
+      {
+        "label": "代码仓库",
+        "url": "https://github.com/icedCoffe001/OmniPano"
+      }
+    ]
+  },
+  {
+    "title": "LoopGen: Generative Street Scene Expansion via Diffusion-Aided Outlier Repair",
+    "venue": "Under review",
+    "image": "images/loopgen.webp",
+    "links": [],
+    "arxiv": null,
+    "id": "loopgen",
+    "shortTitle": "LoopGen",
+    "summary": "用扩散模型修复场景中的异常样本并扩展街景数据，提升驾驶场景覆盖度。",
+    "themes": [
+      "media",
+      "driving",
+      "worldmodel"
+    ],
+    "year": 2026,
+    "status": "under-review",
+    "roles": [
+      "first"
+    ],
+    "primaryTheme": "media",
+    "paper": null,
+    "destinations": []
+  },
+  {
+    "title": "Rethinking Autonomous Driving Planner Beyond Tweaking the Framework",
+    "venue": "Under review",
+    "image": "images/ad-planner.webp",
+    "links": [],
+    "arxiv": null,
+    "id": "ad-planner",
+    "shortTitle": "AD Planner",
+    "summary": "重新审视自动驾驶规划器的设计目标与评测方式，探索超越局部框架改动的改进路径。",
+    "themes": [
+      "driving"
+    ],
+    "year": 2026,
+    "status": "under-review",
+    "roles": [],
+    "primaryTheme": "driving",
+    "paper": null,
+    "destinations": []
+  }
+];
+
+</script>
+  <script>
+/* A small, dependency-free 3D scene: perspective projection, topic volumes and paper nodes. */
+(() => {
+  const TAU = Math.PI * 2;
+  const axisScale=[1.15,1,1.9], cameraDistance=24;
+  const ringCircle=Array.from({length:32},(_,i)=>[Math.cos(i*TAU/32),Math.sin(i*TAU/32)]);
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const smoothstep=(low,high,value)=>{const t=clamp((value-low)/(high-low),0,1);return t*t*(3-2*t);};
+  const escape = value => String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[ch]);
+  // Every topic occupies a volume in this one XYZ space. Paper positions satisfy
+  // ALL of their memberships, including exclusion from unrelated topic volumes.
+  const regionSpecs = {
+    "3d": {center: [-1.2, 1.15, -1.25], radius: [2.6, 2, 1.9]},
+    media: {center: [-1.5, -.15, 1.5], radius: [2.5, 1.7, 2]},
+    worldmodel: {center: [-.4, -.4, -.1], radius: [2.8, 1.9, 2.1]},
+    embodied: {center: [1.3, .7, -.1], radius: [2.4, 1.9, 1.9]},
+    robotics: {center: [1.3, .2, -.45], radius: [1.95, 1.9, 1.7]},
+    llm: {center: [.4, -.15, -.65], radius: [1.8, 3.1, .8]},
+    infra: {center: [3.3, 1.1, 1.15], radius: [1.3, 1.5, 1.3]},
+    driving: {center: [-1.15, -2, .25], radius: [2.1, 2.1, 1.85]},
+  };
+  // Map-only abbreviations; full titles remain in the inspector and accessible names.
+  const abbreviations={
+    "generation-models-know-space":"GMKS", "visual-in-context-learning":"Visual ICL",
+    "support-effective-3d":"SE-3D", "drag-your-gaussian":"DYG",
+    "when-numbers-speak":"WNS", "360-video-generation":"OmniPano",
+    "world-models-for-ad":"WM for AD", "probabilistic-decisions":"Prob. Decisions",
+    "visual-specialists":"Vis. Specialists", "vision-remember":"Vis. Remember",
+    "revisiting-mllms":"Revisit-MLLMs",
+  };
+  const defaultView = {yaw: -.25, pitch: -.2, zoom: 1};
+  // A persistent contour parameter for each badge. Never reselect a vertex or
+  // an outer slot as the camera turns, including when ellipse axes cross.
+  const topicAngles={"3d":-140,media:-175,llm:-90,infra:-45,embodied:-30,robotics:40,driving:95,worldmodel:130};
+  const metric = (point, region) => point.reduce((sum, value, axis) => sum + ((value-region.center[axis])/region.radius[axis])**2, 0);
+  const halton = (index, base) => {let value=0, fraction=1;while(index){fraction/=base;value+=fraction*(index%base);index=Math.floor(index/base);}return value;};
+  function rotate(point, view) {
+    const [x,y,z]=point.map((v,i)=>v*axisScale[i]),cy=Math.cos(view.yaw),sy=Math.sin(view.yaw),cp=Math.cos(view.pitch),sp=Math.sin(view.pitch);
+    const xx=x*cy+z*sy,zz=-x*sy+z*cy,yy=y*cp-zz*sp,depth=y*sp+zz*cp,k=cameraDistance/(cameraDistance-depth);
+    return {x:xx*k,y:yy*k,z:depth,k};
+  }
+  function layout(projects, themes) {
+    const regions=themes.map(theme=>({...theme,...regionSpecs[theme.id]}));
+    const signatures=new Map();
+    projects.forEach(project=>{const key=project.themes.slice().sort().join("|");if(!signatures.has(key))signatures.set(key,[]);signatures.get(key).push(project);});
+    const placed=[];
+    // Place the most constrained intersections first, then spread papers inside
+    // each feasible region. Resizing or selecting topics never changes XYZ.
+    for(const [signature,papers] of [...signatures].sort((a,b)=>b[0].split("|").length-a[0].split("|").length||a[0].localeCompare(b[0]))){
+      const members=signature.split("|"),inside=regions.filter(region=>members.includes(region.id));
+      const lower=[0,1,2].map(axis=>Math.max(...inside.map(r=>r.center[axis]-r.radius[axis])));
+      const upper=[0,1,2].map(axis=>Math.min(...inside.map(r=>r.center[axis]+r.radius[axis])));
+      const candidates=[];
+      for(let i=1;i<=6000;i++){
+        const point=[2,3,5].map((base,axis)=>lower[axis]+halton(i,base)*(upper[axis]-lower[axis]));
+        const margin=Math.min(...regions.map(region=>members.includes(region.id)?1-metric(point,region):metric(point,region)-1));
+        if(margin>.035)candidates.push({point,margin,screen:rotate(point,defaultView)});
+      }
+      if(!candidates.length)throw new Error(`No valid topic intersection for ${signature}`);
+      const cutoff=Math.min(.15,Math.max(...candidates.map(c=>c.margin))*.5),choices=candidates.filter(c=>c.margin>=cutoff);
+      for(const project of papers){
+        let best=null,score=-Infinity;
+        for(const candidate of choices){
+          let spacing=Infinity;
+          // Text is wider than it is tall: leave more vertical lanes for names.
+          for(const node of placed){const dx=candidate.screen.x-node.screen.x,dy=(candidate.screen.y-node.screen.y)*2.2;spacing=Math.min(spacing,dx*dx+dy*dy);}
+          spacing=placed.length?Math.sqrt(spacing):0;
+          const next=spacing+candidate.margin*.12;
+          if(next>score){score=next;best=candidate;}
+        }
+        placed.push({project,point:best.point.slice(),screen:best.screen,margin:best.margin});
+        choices.splice(choices.indexOf(best),1);
+      }
+    }
+    return {regions,nodes:projects.map(project=>placed.find(node=>node.project.id===project.id))};
+  }
+  const tint = (hex, alpha) => `rgba(${parseInt(hex.slice(1,3),16)},${parseInt(hex.slice(3,5),16)},${parseInt(hex.slice(5,7),16)},${alpha})`;
+  function create(root, {projects, themes, shortVenue, openPaper, openTopic}) {
+    root.innerHTML = `<div class="map-toolbar"><span class="map-caption">RESEARCH SPACE · ${projects.length} WORKS</span><span class="map-selection" aria-live="polite"></span><span class="map-help">拖拽旋转 · 滚轮 / 双指缩放</span><div class="map-controls"><button type="button" data-map-action="motion" title="鼠标悬停时继续旋转；点击暂停或恢复">暂停旋转</button><button type="button" data-map-action="out" aria-label="缩小论文图谱">−</button><button type="button" data-map-action="in" aria-label="放大论文图谱">+</button><button type="button" data-map-action="reset" aria-label="复位三维图谱">复位</button></div></div><div class="map-stage"><canvas class="map-canvas" tabindex="0" role="img" aria-label="统一 XYZ 坐标系中的三维论文图谱。多主题论文位于对应主题区域的交集内。论文缩写常显，多选主题会点亮任一所选主题的相关论文。拖拽或方向键旋转，加减键缩放，Home 键复位；Tab 可选择论文点。"></canvas><div class="map-objects"></div><div class="map-inspector" hidden></div><span class="map-orientation">同一坐标系 · 交集 = 共同主题</span></div><div class="map-legend" aria-label="研究方向；多选高亮所有相关论文"></div>`;
+    const stage = root.querySelector(".map-stage"), canvas = root.querySelector("canvas"), ctx = canvas.getContext("2d");
+    // Lighting is low-frequency: compose it at quarter resolution, then copy once.
+    // Wireframes, points and text keep the full display resolution.
+    const surfaceLayer=document.createElement("canvas"),surfaceCtx=surfaceLayer.getContext("2d");
+    const objects = root.querySelector(".map-objects"), inspector = root.querySelector(".map-inspector"), selection = root.querySelector(".map-selection");
+    const nodeSpace=document.createElement("div");nodeSpace.className="map-node-space";objects.append(nodeSpace);
+    let view = {...defaultView}, width = 0, height = 0, frame = 0, hovered = null, suppressClickUntil = 0, offset={x:0,y:0};
+    let plot={x:0,y:0,width:0,height:0}, camera={}, pixelRatio=1;
+    const activeTopics=new Set();
+    const pointers = new Map(); let gesture = null;
+    const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)"), motionButton=root.querySelector('[data-map-action="motion"]');
+    let autoRotation=!reducedMotion.matches, inView=false, keyboardFocus=false, motionRunning=false, resumeTimer=0, resumeAt=0, lastMotionAt=0;
+    const topicById = new Map(themes.map(theme => [theme.id, theme]));
+    const scene=layout(projects,themes),groups=scene.regions;
+    const groupById = new Map(groups.map(group => [group.id, group]));
+    const nodes=scene.nodes;
+    const paintOrder=groups.slice();
+    const pointOrder=nodes.slice();
+    const matches=node=>!activeTopics.size||node.project.themes.some(id=>activeTopics.has(id));
+    for (const node of nodes) {
+        const memberColors=node.project.themes.map(id=>groupById.get(id).color);
+        const button = document.createElement("button");button.type="button";
+        button.className = "map-node" + (node.project.roles.includes("first") || node.project.roles.includes("lead") ? " is-key-paper" : "") + (memberColors.length>1?" is-intersection":"");
+        button.dataset.paperId = node.project.id;button.dataset.topics=node.project.themes.join(" ");button.dataset.position=JSON.stringify(node.point);
+        button.style.setProperty("--point-color",memberColors[0]);
+        button.style.setProperty("--point-fill",memberColors.length===1?memberColors[0]:`conic-gradient(${memberColors.map((color,i)=>`${color} ${i/memberColors.length*100}% ${(i+1)/memberColors.length*100}%`).join(",")})`);
+        button.setAttribute("aria-label", `${node.project.shortTitle}，${shortVenue(node.project)}，${node.project.themes.map(id=>topicById.get(id).label).join(" ∩ ")}。打开${node.project.status === "software" ? "项目介绍" : "论文讲解"}`);
+        node.mapName=abbreviations[node.project.id]||node.project.shortTitle;node.colors=memberColors;
+        button.innerHTML = `<span class="map-node-name">${escape(node.mapName)}</span>`;
+        button.addEventListener("focus", () => setHovered(node));
+        button.addEventListener("blur", () => setHovered(null));
+        button.addEventListener("click", event => {event.stopPropagation();if(event.detail===0||performance.now()>suppressClickUntil)openPaper(node.project.id);});
+        nodeSpace.append(button);node.button=button;node.screen={};
+        button.style.transform=`translate3d(${node.point[0]*axisScale[0]*100}px,${node.point[1]*axisScale[1]*100}px,${node.point[2]*axisScale[2]*100}px)`;
+        node.label={x:0,y:0,w:0,h:0};
+    }
+    for (const group of groups) {
+      const label=document.createElement("button");label.type="button";label.className="map-topic-label";
+      label.dataset.mapTopic=group.id;label.style.setProperty("--topic-color",group.color);label.textContent=group.label;
+      label.dataset.center=JSON.stringify(group.center);label.dataset.radius=JSON.stringify(group.radius);
+      label.setAttribute("aria-label",`选择 ${group.label}，可多选点亮所有相关论文`);label.setAttribute("aria-pressed","false");
+      label.addEventListener("click", event => {event.stopPropagation();if(performance.now()>suppressClickUntil)selectTopic(group.id);});
+      objects.append(label);group.labelElement=label;group.screen={};group.ellipse={};
+      const angle=topicAngles[group.id]*Math.PI/180;group.labelDirection=[Math.cos(angle),Math.sin(angle)];
+      group.scaledRadius2=group.radius.map((r,i)=>(r*axisScale[i])**2);
+    }
+    const legendLabels={"3d":"3D Vision / Gen",media:"Image / Video Gen",llm:"LLM / MLLM",embodied:"VLA / Embodied",infra:"Infrastructure",robotics:"Robotics",driving:"Driving",worldmodel:"World Models"};
+    root.querySelector(".map-legend").innerHTML=groups.map(group=>`<span class="map-topic-chip" style="--topic-color:${group.color}" data-topic-chip="${group.id}"><button type="button" data-map-topic="${group.id}" aria-pressed="false" aria-label="选择 ${escape(group.label)}，可多选点亮所有相关论文"><i aria-hidden="true"></i>${escape(legendLabels[group.id]||group.label)}<b>${projects.filter(p=>p.themes.includes(group.id)).length}</b></button><button type="button" data-open-theme="${group.id}" aria-label="打开 ${escape(group.label)} 论文目录">↗</button></span>`).join("");
+    root.querySelector(".map-legend").addEventListener("click", event=>{
+      const topic=event.target.closest("[data-map-topic]");if(topic)selectTopic(topic.dataset.mapTopic);
+      const list=event.target.closest("[data-open-theme]");if(list)openTopic(list.dataset.openTheme);
+    });
+    function selectTopic(id){
+      if(activeTopics.has(id))activeTopics.delete(id);else activeTopics.add(id);setHovered(null);updateSelection();pauseMotionBriefly();
+    }
+    function updateSelection(){
+      root.querySelectorAll("[data-map-topic]").forEach(el=>el.setAttribute("aria-pressed",String(activeTopics.has(el.dataset.mapTopic))));
+      root.querySelectorAll("[data-topic-chip]").forEach(el=>el.classList.toggle("is-active",activeTopics.has(el.dataset.topicChip)));
+      selection.textContent=activeTopics.size?`${activeTopics.size===1?topicById.get([...activeTopics][0]).label:activeTopics.size+" 个主题"} · ${nodes.filter(matches).length} 篇相关工作`:"";
+      for(const node of nodes){node.matched=matches(node);node.button.classList.toggle("is-selected",activeTopics.size>0&&node.matched);node.button.style.pointerEvents=node.matched?"auto":"none";}
+      root.dataset.activeTopics=[...activeTopics].join(" ");root.classList.toggle("has-selection",activeTopics.size>0);schedule();
+    }
+    function setHovered(node){
+      if(hovered===node)return;
+      if(hovered)hovered.button.classList.remove("is-hovered");hovered=node;
+      inspector.hidden=!node;
+      if(node){node.button.classList.add("is-hovered");inspector.innerHTML=`<strong>${escape(node.project.title)}</strong><small>${escape(shortVenue(node.project))}</small><em>${escape(node.project.themes.map(id=>topicById.get(id)?.label).filter(Boolean).join(" ∩ "))}　↗ 点击查看讲解</em>`;}
+      schedule();
+    }
+    function nearestNode(event){
+      const rect=stage.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+      let closest=null,best=Infinity;
+      for(const node of nodes){
+        if(node.button.hidden||!node.screen||!matches(node))continue;
+        const distance=Math.hypot(node.screen.x-x,node.screen.y-y),radius=(width<600?14:13)*clamp(node.screen.k,.82,1.3);
+        if(distance<=radius&&distance<best){closest=node;best=distance;}
+      }
+      if(closest&&best<7)return closest;
+      // Abbreviations are clickable too, including while the scene is moving.
+      for(let i=pointOrder.length-1;i>=0;i--){const node=pointOrder[i];if(matches(node)&&!node.button.hidden&&Math.abs(node.label.x-x)<=node.label.w/2&&Math.abs(node.label.y-y)<=node.label.h/2)return node;}
+      return closest;
+    }
+    // Resolve overlapping hit areas using the projected dot centers, including touch taps.
+    stage.addEventListener("click",event=>{
+      if(event.detail===0)return;
+      if(performance.now()<=suppressClickUntil){event.preventDefault();event.stopPropagation();return;}
+      if(event.target.closest(".map-topic-label"))return;
+      const node=nearestNode(event);
+      if(node){event.preventDefault();event.stopPropagation();node.button.focus({preventScroll:true});openPaper(node.project.id);}
+    },true);
+    function updateCamera(){
+      const cy=Math.cos(view.yaw),sy=Math.sin(view.yaw),cp=Math.cos(view.pitch),sp=Math.sin(view.pitch);
+      camera={cy,sy,cp,sp,scaleX:1,scaleY:1,eye:[-cameraDistance*cp*sy/axisScale[0],cameraDistance*sp/axisScale[1],cameraDistance*cp*cy/axisScale[2]]};
+      // A continuous fit of the current paper envelope uses the available height
+      // as well as width. The bounds are continuous through a complete rotation;
+      // neither the XYZ positions nor the badges' contour parameters change.
+      let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+      for(const node of nodes){project(node.point,node.screen);const p=node.screen;minX=Math.min(minX,p.u);maxX=Math.max(maxX,p.u);minY=Math.min(minY,p.v);maxY=Math.max(maxY,p.v);}
+      for(const group of groups){project(group.center,group.screen);projectEllipse(group);}
+      const horizontal=fitProjection(0,plot.width/(maxX-minX),width-16);
+      const vertical=fitProjection(1,plot.height/(maxY-minY),height-32);
+      offset.x=horizontal.center;offset.y=-vertical.center;
+      camera.scaleX=horizontal.scale*view.zoom;camera.scaleY=vertical.scale*view.zoom;
+      // All 55 accessible hit targets share ONE projective CSS matrix. Their
+      // world transforms are constant, so animation no longer restyles each node.
+      const sx=camera.scaleX/100,sy2=camera.scaleY/100;
+      const ox=plot.x+plot.width/2-offset.x*camera.scaleX,oy=plot.y+plot.height/2+offset.y*camera.scaleY;
+      const wx=cp*sy/(100*cameraDistance),wy=-sp/(100*cameraDistance),wz=-cp*cy/(100*cameraDistance);
+      nodeSpace.style.transform=`matrix3d(${[
+        sx*cy+ox*wx,-sy2*sp*sy+oy*wx,-cp*sy/100,wx,
+        ox*wy,-sy2*cp+oy*wy,sp/100,wy,
+        sx*sy+ox*wz,sy2*sp*cy+oy*wz,cp*cy/100,wz,
+        ox,oy,0,1
+      ].join(",")})`;
+    }
+    function fitProjection(axis,scale,available){
+      // Fit the real contours and attached text before applying user zoom.
+      // Only global scale/centering changes; individual labels never dodge one
+      // another. Solving the active envelope keeps this continuous at crossings.
+      let lo,hi,loValue,hiValue,loPad,hiPad;
+      const include=(value,before,after)=>{
+        const a=value*scale+before,b=value*scale+after;
+        if(a<lo){lo=a;loValue=value;loPad=before;}
+        if(b>hi){hi=b;hiValue=value;hiPad=after;}
+      };
+      for(let pass=0;pass<12;pass++){
+        lo=Infinity;hi=-Infinity;
+        for(const group of groups){
+          const e=group.ellipse,c=axis?e.y:e.x,r=Math.sqrt(axis?e.yy:e.xx),half=(axis?group.labelBox.h:group.labelBox.w)/2;
+          include(c-r,-1,1);include(c+r,-1,1);include(axis?e.ay:e.ax,-half,half);
+        }
+        for(const node of nodes){
+          if(axis)include(-node.screen.v,-(width<600?17:19)-node.label.h/2,11);
+          else include(node.screen.u,-Math.max(node.label.w/2,11),Math.max(node.label.w/2,11));
+        }
+        if(hi-lo<=available+.001)break;
+        scale=Math.min(scale,(available-hiPad+loPad)/(hiValue-loValue));
+      }
+      return {scale,center:(lo+hi)/(2*scale)};
+    }
+    function projectXYZ(x,y,z,p={}){
+      x*=axisScale[0];y*=axisScale[1];z*=axisScale[2];
+      const xx=x*camera.cy+z*camera.sy,zz=-x*camera.sy+z*camera.cy;
+      const yy=y*camera.cp-zz*camera.sp,depth=y*camera.sp+zz*camera.cp,k=cameraDistance/(cameraDistance-depth);
+      p.u=xx*k;p.v=yy*k;
+      p.x=plot.x+plot.width/2+(xx*k-offset.x)*camera.scaleX;
+      p.y=plot.y+plot.height/2-(yy*k-offset.y)*camera.scaleY;p.z=depth;p.k=k;return p;
+    }
+    function project(point,p){return projectXYZ(point[0],point[1],point[2],p);}
+    function projectEllipse(group){
+      // Perspective projection of an ellipsoid is an ellipse. Its analytic
+      // center/covariance replaces 64 silhouette projections per region/frame.
+      const [a,b,c]=group.scaledRadius2,{cy,sy,cp,sp}=camera,p=group.screen,e=group.ellipse;
+      const xx=a*cy*cy+c*sy*sy,yy=a*sp*sp*sy*sy+b*cp*cp+c*sp*sp*cy*cy;
+      const zz=a*cp*cp*sy*sy+b*sp*sp+c*cp*cp*cy*cy;
+      const xy=sp*cy*sy*(a-c),xz=cp*cy*sy*(c-a),yz=cp*sp*(b-a*sy*sy-c*cy*cy);
+      const x=p.u/p.k,y=p.v/p.k,w=cameraDistance-p.z,den=w*w-zz,factor=cameraDistance*cameraDistance/den;
+      e.x=cameraDistance*(x*w+xz)/den;e.y=-cameraDistance*(y*w+yz)/den;
+      e.xx=factor*(xx-x*x)+e.x*e.x;e.yy=factor*(yy-y*y)+e.y*e.y;e.xy=-factor*(xy-x*y)+e.x*e.y;
+      // The positive matrix square root is continuous even for a circle. It
+      // maps one fixed unit vector onto the actual edge, without angle flips.
+      const det=Math.sqrt(Math.max(0,e.xx*e.yy-e.xy*e.xy)),div=Math.sqrt(e.xx+e.yy+2*det),[dx,dy]=group.labelDirection;
+      e.ax=e.x+((e.xx+det)*dx+e.xy*dy)/div;e.ay=e.y+(e.xy*dx+(e.yy+det)*dy)/div;
+    }
+    function surfaceWires(group,front){
+      // Split each real 3D surface curve at the camera-facing boundary. The
+      // crossings interpolate continuously instead of switching whole segments.
+      ctx.beginPath();
+      for(const ring of group.rings){
+        let connected=false;
+        for(let i=0;i<ring.screen.length;i++){
+          const a=ring.screen[i],b=ring.screen[(i+1)%ring.screen.length];
+          const aInside=front?a.facing>=0:a.facing<=0,bInside=front?b.facing>=0:b.facing<=0;
+          if(!aInside&&!bInside){connected=false;continue;}
+          let ax=a.x,ay=a.y,bx=b.x,by=b.y;
+          if(aInside!==bInside){
+            const t=a.facing/(a.facing-b.facing),x=ax+(bx-ax)*t,y=ay+(by-ay)*t;
+            if(aInside){bx=x;by=y;}else{ax=x;ay=y;}
+          }
+          if(!connected)ctx.moveTo(ax,ay);ctx.lineTo(bx,by);connected=bInside;
+        }
+      }
+      ctx.stroke();
+    }
+    function volume(group){
+      const chosen=activeTopics.has(group.id)||hovered?.project.themes.includes(group.id),muted=(activeTopics.size||hovered)&&!chosen;
+      const e=group.ellipse,sx=camera.scaleX,sy=camera.scaleY;
+      const x=plot.x+plot.width/2+(e.x-offset.x)*sx,y=plot.y+plot.height/2+(e.y+offset.y)*sy;
+      const xx=e.xx*sx*sx,yy=e.yy*sy*sy,xy=e.xy*sx*sy,mid=(xx+yy)/2,spread=Math.hypot((xx-yy)/2,xy);
+      ctx.beginPath();ctx.ellipse(x,y,Math.sqrt(mid+spread),Math.sqrt(Math.max(0,mid-spread)),.5*Math.atan2(2*xy,xx-yy),0,TAU);
+      const distanceFade=clamp(.76+group.screen.z*.055,.48,1);
+      ctx.strokeStyle=tint(group.color,(muted ? .085 : chosen ? .78 : .38)*distanceFade);ctx.lineWidth=chosen?1.6:1;ctx.stroke();
+      // A cached translucent sphere light is mapped onto the exact silhouette.
+      // The symmetric square root has no eigenvector flip as the scene rotates.
+      const det=Math.sqrt(Math.max(0,xx*yy-xy*xy)),div=Math.sqrt(xx+yy+2*det);
+      surfaceCtx.save();surfaceCtx.globalAlpha=(muted?.12:chosen?1:.75)*distanceFade;
+      surfaceCtx.transform((xx+det)/div,xy/div,xy/div,(yy+det)/div,x,y);
+      surfaceCtx.drawImage(group.surfaceSprite,-1,-1,2,2);surfaceCtx.restore();
+      const eye=group.center.map((c,i)=>(camera.eye[i]-c)/group.radius[i]);
+      for(const ring of group.rings){
+        for(let i=0;i<ring.points.length;i++){
+          const p=project(ring.points[i],ring.screen[i]),n=ring.unit[i];
+          p.facing=n[0]*eye[0]+n[1]*eye[1]+n[2]*eye[2]-1;
+        }
+      }
+      ctx.lineWidth=.6;ctx.strokeStyle=tint(group.color,(muted?.014:chosen?.10:.048)*distanceFade);surfaceWires(group,false);
+      ctx.lineWidth=chosen?1.2:.95;ctx.strokeStyle=tint(group.color,(muted?.05:chosen?.48:.29)*distanceFade);surfaceWires(group,true);
+    }
+    function line(a,b,color,lineWidth=.7){
+      const p=project(a),q=project(b);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=color;ctx.lineWidth=lineWidth;ctx.stroke();return [p,q];
+    }
+    function coordinates(){
+      // One reference grid and one origin shared by every topic and paper.
+      for(let x=-3;x<=4;x++)line([x,-3.1,-2.25],[x,3.4,-2.25],"#b0c6b10b");
+      for(let y=-3;y<=3;y++)line([-3.5,y,-2.25],[4.25,y,-2.25],"#b0c6b10b");
+      const ends=[[4.4,0,0],[0,3.6,0],[0,0,2.7]],negative=[[-3.5,0,0],[0,-3.2,0],[0,0,-2.6]];
+      ends.forEach((end,i)=>{
+        ctx.setLineDash([3,5]);line(negative[i],[0,0,0],"#a6bda233");ctx.setLineDash([]);
+        const [p,q]=line([0,0,0],end,"#b2c8aa80",.8),angle=Math.atan2(q.y-p.y,q.x-p.x);
+        ctx.beginPath();ctx.moveTo(q.x,q.y);ctx.lineTo(q.x-6*Math.cos(angle-.4),q.y-6*Math.sin(angle-.4));ctx.moveTo(q.x,q.y);ctx.lineTo(q.x-6*Math.cos(angle+.4),q.y-6*Math.sin(angle+.4));ctx.stroke();
+        ctx.fillStyle="#bbceaf";ctx.font="10px monospace";ctx.fillText(["X","Y","Z"][i],q.x+7,q.y-5);
+      });
+      const origin=project([0,0,0]);ctx.fillStyle="#a2b69a";ctx.font="9px monospace";ctx.fillText("O",origin.x+4,origin.y+11);
+    }
+    function positionTopicLabel(group){
+      const e=group.ellipse,b=group.labelBox;
+      b.x=plot.x+plot.width/2+(e.ax-offset.x)*camera.scaleX;
+      b.y=plot.y+plot.height/2+(e.ay+offset.y)*camera.scaleY;
+      group.labelElement.style.transform=`translate3d(${b.x.toFixed(3)}px,${b.y.toFixed(3)}px,0) translate(-50%,-50%)`;
+    }
+    function measureScene(){
+      // DOM measurements are confined to resize/font changes.
+      for(const group of groups)group.labelBox={w:group.labelElement.offsetWidth||135,h:group.labelElement.offsetHeight||25};
+      const plotHeight=height-80,plotWidth=width<600?width-72:Math.min(width*.80,plotHeight*1.9);
+      plot={x:(width-plotWidth)/2,y:32,width:plotWidth,height:plotHeight};
+    }
+    function sprite(w,h,paint){
+      const image=document.createElement("canvas");image.width=Math.ceil(w*pixelRatio);image.height=Math.ceil(h*pixelRatio);
+      const context=image.getContext("2d");context.scale(pixelRatio,pixelRatio);paint(context);return image;
+    }
+    function cachePaperSprites(){
+      // Shape text and paint gradients once per size/font change, not 55 times
+      // every frame. Animation only copies these small, already-rasterized images.
+      const font=`500 ${width<600?9.5:11}px ${getComputedStyle(root).getPropertyValue("--body")||"sans-serif"}`;
+      ctx.font=font;
+      for(const node of nodes){
+        const label=node.label;label.w=Math.ceil(ctx.measureText(node.mapName).width)+10;label.h=width<600?17:19;
+        node.nameSprite=sprite(label.w,label.h,c=>{
+          c.font=font;c.textBaseline="middle";c.fillStyle="#f5f8f0";c.fillText(node.mapName,5,label.h/2+.5);
+        });
+        node.nameSprite.dataset.paperLabel=node.project.id;
+        node.pointSprites=[false,true].map(selected=>sprite(40,40,c=>{
+          const radius=node.colors.length>1?6.2:5.2;
+          const glow=c.createRadialGradient(20,20,2,20,20,14);glow.addColorStop(0,tint(node.colors[0],selected?.42:.26));glow.addColorStop(1,tint(node.colors[0],0));
+          c.fillStyle=glow;c.fillRect(6,6,28,28);
+          if(selected){c.beginPath();c.arc(20,20,10,0,TAU);c.strokeStyle="#efffd680";c.lineWidth=.8;c.stroke();}
+          node.colors.forEach((color,i)=>{c.beginPath();c.moveTo(20,20);c.arc(20,20,radius,i/node.colors.length*TAU-TAU/4,(i+1)/node.colors.length*TAU-TAU/4);c.closePath();c.fillStyle=color;c.fill();});
+          const light=c.createRadialGradient(18,18,0,20,20,radius);light.addColorStop(0,"#ffffffb3");light.addColorStop(.35,"#ffffff22");light.addColorStop(1,"#00000038");
+          c.beginPath();c.arc(20,20,radius,0,TAU);c.fillStyle=light;c.fill();c.strokeStyle="#f3ffe4";c.lineWidth=.7;c.stroke();
+        }));
+        for(const image of node.pointSprites)image.dataset.paperPoint=node.project.id;
+      }
+    }
+    function papers(){
+      // Names are rigidly attached to their paper points. Paint from back to
+      // front and fade with depth; intentional overlap never triggers relayout.
+      pointOrder.sort((a,b)=>a.screen.z-b.screen.z);
+      const back=pointOrder[0].screen.z,depthSpan=Math.max(1,pointOrder[pointOrder.length-1].screen.z-back);
+      for(const node of pointOrder){
+        const p=node.screen,b=node.label,match=matches(node),el=node.button;
+        const onscreen=p.x>6&&p.x<width-6&&p.y>6&&p.y<height-6;
+        if(el.hidden===onscreen)el.hidden=!onscreen;
+        const tabIndex=match&&onscreen?0:-1;if(el.tabIndex!==tabIndex)el.tabIndex=tabIndex;
+        b.x=p.x;b.y=p.y-(width<600?17:19);
+        if(!onscreen)continue;
+        const depth=(p.z-back)/depthSpan,focus=smoothstep(.18,.88,depth),alpha=.13+.87*focus*focus;
+        ctx.globalAlpha=match?alpha:.045;
+        ctx.drawImage(node.nameSprite,b.x-b.w/2,b.y-b.h/2,b.w,b.h);
+        const chosen=node===hovered||(activeTopics.size&&match),size=40*(.52+.85*focus);
+        ctx.globalAlpha=match ? .12+.88*focus : .045;
+        ctx.drawImage(node.pointSprites[chosen?1:0],p.x-size/2,p.y-size/2,size,size);
+        if(node===hovered){ctx.globalAlpha=1;ctx.beginPath();ctx.arc(p.x,p.y,9,0,TAU);ctx.strokeStyle="#f0f6dc";ctx.lineWidth=1;ctx.stroke();}
+      }
+      ctx.globalAlpha=1;
+    }
+    function draw(now){
+      frame=0;if(!width||!height)return;
+      if(motionRunning){view.yaw+=Math.min(Math.max(0,now-lastMotionAt),64)*.000075;lastMotionAt=now;}
+      updateCamera();ctx.clearRect(0,0,width,height);surfaceCtx.clearRect(0,0,width,height);coordinates();
+      for(const group of groups)project(group.center,group.screen);
+      paintOrder.sort((a,b)=>a.screen.z-b.screen.z).forEach(volume);
+      ctx.drawImage(surfaceLayer,0,0,width,height);
+      for(const node of nodes)project(node.point,node.screen);
+      for(const group of groups){
+        const opacity=activeTopics.size&&!activeTopics.has(group.id)?".4":"1";
+        if(group.labelElement.style.opacity!==opacity)group.labelElement.style.opacity=opacity;
+        positionTopicLabel(group);
+      }
+      papers();
+      root.dataset.rotation=`${view.yaw.toFixed(3)},${view.pitch.toFixed(3)}`;root.dataset.zoom=view.zoom.toFixed(3);root.dataset.rendered="true";
+      if(motionRunning)schedule();
+    }
+    function schedule(){if(!frame)frame=requestAnimationFrame(draw);}
+    // Hover never stops motion. Gestures and keyboard exploration do; avoid a
+    // catch-up jump when the scene comes back onscreen or a drag ends.
+    function motionAvailable(){
+      return autoRotation&&inView&&!document.hidden&&!pointers.size&&!keyboardFocus;
+    }
+    function syncMotion(){
+      keyboardFocus=!!stage.querySelector(":focus-visible");
+      clearTimeout(resumeTimer);resumeTimer=0;
+      const remaining=resumeAt-performance.now();motionRunning=motionAvailable()&&remaining<=0;
+      root.dataset.autoRotation=String(autoRotation);root.dataset.autoRotating=String(motionRunning);
+      motionButton.textContent=autoRotation?"暂停旋转":"自动旋转";
+      motionButton.setAttribute("aria-label",autoRotation?"暂停三维图谱自动旋转":"开启三维图谱自动旋转");
+      if(motionRunning){lastMotionAt=performance.now();schedule();}
+      else if(motionAvailable()&&remaining>0)resumeTimer=setTimeout(syncMotion,remaining+10);
+    }
+    function pauseMotionBriefly(){resumeAt=performance.now()+1400;syncMotion();}
+    function resize(){
+      width=stage.clientWidth;height=stage.clientHeight;pixelRatio=Math.min(devicePixelRatio||1,2);
+      measureScene();
+      canvas.width=Math.round(width*pixelRatio);canvas.height=Math.round(height*pixelRatio);ctx.setTransform(pixelRatio,0,0,pixelRatio,0,0);
+      surfaceLayer.width=Math.ceil(width/4);surfaceLayer.height=Math.ceil(height/4);surfaceCtx.setTransform(surfaceLayer.width/width,0,0,surfaceLayer.height/height,0,0);
+      cachePaperSprites();schedule();
+    }
+    function reset(){view={...defaultView};activeTopics.clear();updateSelection();setHovered(null);pauseMotionBriefly();schedule();}
+    root.querySelector(".map-controls").addEventListener("click",event=>{
+      const action=event.target.closest("[data-map-action]")?.dataset.mapAction;
+      if(action==="motion"){autoRotation=!autoRotation;resumeAt=0;syncMotion();}
+      else if(action==="reset")reset();else if(action){view.zoom=clamp(view.zoom*(action==="in"?1.2:1/1.2),.6,2.3);pauseMotionBriefly();schedule();}
+    });
+    root.addEventListener("focusin",()=>queueMicrotask(syncMotion));
+    root.addEventListener("focusout",()=>queueMicrotask(syncMotion));
+    document.addEventListener("visibilitychange",syncMotion);
+    reducedMotion.addEventListener("change",()=>{autoRotation=!reducedMotion.matches;resumeAt=0;syncMotion();});
+    const distance=()=>{const p=[...pointers.values()];return p.length===2?Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y):0;};
+    stage.addEventListener("pointerdown",event=>{
+      if(event.button!==0)return;pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});syncMotion();
+      gesture={startX:event.clientX,startY:event.clientY,lastX:event.clientX,lastY:event.clientY,dragged:pointers.size>1,distance:distance(),zoom:view.zoom};
+      if(pointers.size>1){setHovered(null);stage.classList.add("is-dragging");}
+    });
+    stage.addEventListener("pointermove",event=>{
+      if(!pointers.has(event.pointerId)||!gesture){if(event.pointerType!=="touch")setHovered(nearestNode(event));return;}
+      pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
+      if(pointers.size>1){if(gesture.distance>0)view.zoom=clamp(gesture.zoom*distance()/gesture.distance,.6,2.3);gesture.dragged=true;schedule();return;}
+      if(!gesture.dragged&&Math.hypot(event.clientX-gesture.startX,event.clientY-gesture.startY)<5)return;
+      if(!gesture.dragged){gesture.dragged=true;stage.setPointerCapture(event.pointerId);stage.classList.add("is-dragging");setHovered(null);}
+      view.yaw+=(event.clientX-gesture.lastX)*.006;view.pitch=clamp(view.pitch+(event.clientY-gesture.lastY)*.005,-1.15,1.15);
+      gesture.lastX=event.clientX;gesture.lastY=event.clientY;schedule();
+    });
+    function release(event){
+      if(!pointers.has(event.pointerId))return;
+      if(gesture?.dragged){suppressClickUntil=performance.now()+350;}
+      pointers.delete(event.pointerId);if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);
+      if(pointers.size){const p=[...pointers.values()][0];gesture={startX:p.x,startY:p.y,lastX:p.x,lastY:p.y,dragged:true};}
+      else{gesture=null;stage.classList.remove("is-dragging");}pauseMotionBriefly();schedule();
+    }
+    stage.addEventListener("pointerup",release);stage.addEventListener("pointercancel",release);
+    stage.addEventListener("pointerleave",event=>{if(!stage.hasPointerCapture(event.pointerId)&&pointers.size<2)release(event);if(!nodes.some(n=>n.button===document.activeElement))setHovered(null);});
+    stage.addEventListener("wheel",event=>{event.preventDefault();view.zoom=clamp(view.zoom*Math.exp(-event.deltaY*.0012),.6,2.3);setHovered(null);pauseMotionBriefly();schedule();},{passive:false});
+    canvas.addEventListener("keydown",event=>{
+      if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","+","=","-","Home","Escape"].includes(event.key))return;
+      event.preventDefault();event.stopPropagation();pauseMotionBriefly();
+      
+      if(event.key==="Home")reset();else if(event.key==="Escape"){activeTopics.clear();updateSelection();setHovered(null);}
+      else if(event.key==="ArrowLeft")view.yaw-=.12;else if(event.key==="ArrowRight")view.yaw+=.12;
+      else if(event.key==="ArrowUp")view.pitch=clamp(view.pitch-.12,-1.15,1.15);else if(event.key==="ArrowDown")view.pitch=clamp(view.pitch+.12,-1.15,1.15);
+      else view.zoom=clamp(view.zoom*(event.key==="-"?1/1.2:1.2),.6,2.3);schedule();
+    });
+    groups.forEach(group=>{
+      const curves=[0,1,2].map(axis=>ringCircle.map(([cos,sin])=>{
+        const n=[0,0,0];n[(axis+1)%3]=cos;n[(axis+2)%3]=sin;return n;
+      }));
+      for(const latitude of [-.52,.52])curves.push(ringCircle.map(([cos,sin])=>[Math.sqrt(1-latitude*latitude)*cos,latitude,Math.sqrt(1-latitude*latitude)*sin]));
+      group.rings=curves.map(unit=>({unit,points:unit.map(n=>n.map((v,i)=>group.center[i]+group.radius[i]*v)),screen:unit.map(()=>({}))}));
+      group.surfaceSprite=sprite(192,192,c=>{
+        const light=c.createRadialGradient(62,53,4,96,96,121);
+        light.addColorStop(0,tint(group.color,.23));light.addColorStop(.32,tint(group.color,.12));light.addColorStop(.72,tint(group.color,.028));light.addColorStop(1,tint(group.color,.006));
+        c.beginPath();c.arc(96,96,95.5,0,TAU);c.fillStyle=light;c.fill();
+      });
+    });
+    root.dataset.pointCount=String(nodes.length);root.dataset.coordinateSystem="shared-xyz";
+    new ResizeObserver(resize).observe(stage);resize();
+    document.fonts.ready.then(resize);
+    new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;syncMotion();},{threshold:0}).observe(stage);
+    syncMotion();
+  }
+  window.ResearchMap={create,layout};
+})();
+
+</script>
+  <script>
+/* Only used by the standalone demo; replace these callbacks in your site. */
+window.PublicationPreview = (() => {
+  const dialog = document.querySelector("#slice-detail");
+  const title = document.querySelector("#slice-detail-title");
+  const content = document.querySelector("#slice-detail-content");
+  const element = (tag, text, className) => {
+    const node = document.createElement(tag);
+    if (text != null) node.textContent = text;
+    if (className) node.className = className;
+    return node;
+  };
+  let papers, themes, shortVenue;
+
+  function show() {
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+  }
+
+  function openPaper(id) {
+    const paper = papers.find(item => item.id === id);
+    if (!paper) return;
+    title.textContent = paper.title;
+    content.replaceChildren(
+      element("p", shortVenue(paper), "paper-venue"),
+      element("p", paper.summary || "")
+    );
+    const tags = element("div", null, "paper-topics");
+    paper.themes.forEach(topic => tags.append(element("span", themes.find(item => item.id === topic)?.label || topic)));
+    content.append(tags);
+    const links = element("nav", null, "paper-links");
+    links.setAttribute("aria-label", "论文与项目资源");
+    for (const resource of paper.links || []) {
+      try {
+        const url = new URL(resource.url);
+        if (!["http:", "https:"].includes(url.protocol)) continue;
+        const link = element("a", resource.label + " ↗");
+        link.href = url.href;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        links.append(link);
+      } catch { /* Ignore incomplete resource URLs. */ }
+    }
+    if (links.childElementCount) content.append(links);
+    show();
+  }
+
+  function openTopic(id) {
+    const theme = themes.find(item => item.id === id);
+    if (!theme) return;
+    const members = papers.filter(paper => paper.themes.includes(id));
+    title.textContent = theme.label;
+    const list = element("ul", null, "topic-paper-list");
+    for (const paper of members) {
+      const item = element("li");
+      const button = element("button");
+      button.type = "button";
+      button.append(element("span", paper.shortTitle), element("small", shortVenue(paper)));
+      button.addEventListener("click", () => openPaper(paper.id));
+      item.append(button);
+      list.append(item);
+    }
+    content.replaceChildren(element("p", `${members.length} 项工作`), list);
+    show();
+  }
+
+  return {
+    configure(data) { ({ papers, themes, shortVenue } = data); },
+    openPaper,
+    openTopic,
+  };
+})();
+
+</script>
+  <script>
+/* Themes, summary and venue formatting extracted from the current app.js. */
+(() => {
+  const papers = window.PROJECTS || [];
+  const themes = window.PUBLICATION_THEMES = [
+    { id: "3d", label: "3D Vision / Generation", color: "#e7aa77" },
+    { id: "media", label: "Image / Video Generation", color: "#a7b9ef" },
+    { id: "llm", label: "LLM / MLLM", color: "#c3a7f0" },
+    { id: "embodied", label: "VLA · Embodied Models", color: "#d5ef80" },
+    { id: "infra", label: "Model Infrastructure", color: "#82d4bd" },
+    { id: "robotics", label: "Robotics", color: "#f0c975" },
+    { id: "driving", label: "Autonomous Driving", color: "#ed947b" },
+    { id: "worldmodel", label: "World Models", color: "#8ed2c7" },
+  ];
+
+  function shortVenue(paper) {
+    const venue = paper.venue || "";
+    if (/under review/i.test(venue)) return "UNDER REVIEW";
+    const honor = /\[(.*?)\]/.exec(venue)?.[1];
+    const names = ["CVPR", "ICCV", "ECCV", "ICML", "ICRA", "IJCAI", "SIGGRAPH", "TPAMI", "TMM", "ICIP", "TIP", "ACM MM", "RAL"];
+    const name = names.find(candidate => venue.toUpperCase().includes(candidate));
+    const year = /\b20\d{2}\b/.exec(venue)?.[0] || String(paper.year || "");
+    if (name) return `${name}${/workshop/i.test(venue) ? " Workshop" : ""}${year ? ` ${year}` : ""}${honor ? ` · ${honor.toUpperCase()}` : ""}`;
+    if (/arXiv/i.test(venue)) return `arXiv · ${paper.arxiv || year}`;
+    return `${venue.replace(/\s*,\s*20\d{2}.*$/, "")} ${year}`.trim();
+  }
+
+  function renderPublicationSummary() {
+    // Owner-provided totals are independent of the archive's per-work metadata.
+    const honors = [[2, "Highlight", "highlight"], [1, "Workshop Best Paper", "best-paper"], [4, "Oral", "oral"]]
+      .map(([count, label, id]) => `<span class="publication-phrase"><strong data-stat="${id}">${count}</strong> ${label}</span>`).join(" · ");
+    document.querySelector("#publication-summary").innerHTML = `<strong data-stat="top-conference">27</strong> papers accepted to top-tier conference main tracks, including <strong id="first-count" data-stat="first-author">13</strong> as first / co-first author <span class="publication-honors">(${honors})</span> and <span class="publication-phrase">Project Lead on <strong data-stat="project-lead">12</strong>.</span>`;
+    document.querySelector("#unique-count").textContent = papers.length;
+    document.querySelector("#field-count").textContent = themes.length;
+    document.querySelector("#accepted-count").textContent = papers.filter(paper => paper.status === "published").length;
+  }
+
+  renderPublicationSummary();
+  window.PublicationPreview.configure({ papers, themes, shortVenue });
+  const options = window.PUBLICATIONS_SLICE_OPTIONS || {};
+  window.ResearchMap.create(document.querySelector("#theme-map"), {
+    projects: papers,
+    themes,
+    shortVenue,
+    openPaper: options.openPaper || window.PublicationPreview.openPaper,
+    openTopic: options.openTopic || window.PublicationPreview.openTopic,
+  });
+})();
+
+</script>
+</body>
+</html>
