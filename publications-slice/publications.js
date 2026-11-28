@@ -10,6 +10,7 @@
     { id: "robotics", label: "Robotics", color: "#f0c975" },
     { id: "driving", label: "Autonomous Driving", color: "#ed947b" },
     { id: "worldmodel", label: "World Models", color: "#8ed2c7" },
+    { id: "simulation", label: "Simulation", color: "#6f9ed4" },
   ];
 
   function shortVenue(paper) {

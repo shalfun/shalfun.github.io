@@ -175,7 +175,7 @@
     During my undergraduate studies, I started at <b>SenseTime</b>, working on computer vision with an emphasis on 2D/3D vision.
     </p>
     <p>
-    Then, I joined the Joint Algorithm Department of <b>Rockchip & ZJU</b>, focusing on face-related vision algorithms and mass production, and led the open-sourcing of <a href="https://github.com/airockchip/rknn-toolkit2">RKNN</a> (⭐ ~3.5k).
+    Then, I joined the Joint Algorithm Department of <b>Rockchip & ZJU</b>, focusing on face-related vision algorithms and mass production, and led the open-sourcing of the <a href="https://github.com/airockchip/rknn-toolkit2">RKNN series</a> (⭐ ~6k).
     </p>
     <p>
     At <b>Baidu</b>, I worked in the ADFM&VIS, where I oversaw the world model and concurrently led ADFM research and production delivery, with work spanning 3D scene understanding, vision-language models, implicit rendering, 4D generation, and world models.
@@ -379,6 +379,10 @@
                 <span class="pub-filter-chip" style="--topic-color:#f0c975">
                   <button type="button" class="pub-filter-btn" data-filter="robotics" data-topic="robotics"><i></i><span>Robotics</span><b></b></button>
                   <button type="button" class="pub-filter-open" data-open-theme="robotics" aria-label="Open Robotics">↗</button>
+                </span>
+                <span class="pub-filter-chip" style="--topic-color:#6f9ed4">
+                  <button type="button" class="pub-filter-btn" data-filter="simulation" data-topic="simulation"><i></i><span>Simulation</span><b></b></button>
+                  <button type="button" class="pub-filter-open" data-open-theme="simulation" aria-label="Open Simulation">↗</button>
                 </span>
                 <span class="pub-filter-chip" style="--topic-color:#82d4bd">
                   <button type="button" class="pub-filter-btn" data-filter="infra" data-topic="infra"><i></i><span>Infrastructure</span><b></b></button>
@@ -601,7 +605,7 @@
   </tr>
 </tbody></table>
 
-<table class="pub-item" data-filters="robotics" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table class="pub-item" data-filters="robotics simulation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr>
     <td style="padding:20px;width:30%;max-width:30%" align="center">
       <img style="width:100%;max-width:100%" src="assets/imgs/robodojo.png" alt="thumb">
@@ -624,7 +628,7 @@
   </tr>
 </tbody></table>
 
-<table class="pub-item" data-filters="robotics" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table class="pub-item" data-filters="robotics simulation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr>
     <td style="padding:20px;width:30%;max-width:30%" align="center">
       <img style="width:100%;max-width:100%" src="assets/imgs/softvtbench.png" alt="thumb">
@@ -1162,7 +1166,7 @@
   </tr>
 </tbody></table>
 
-<table class="pub-item" data-filters="selected 3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table class="pub-item" data-filters="selected 3d4d simulation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr>
     <td style="padding:20px;width:30%;max-width:30%" align="center">
       <img style="width:100%;max-width:100%" src="assets/imgs/ral.png" alt="thumb">
@@ -1296,7 +1300,7 @@
   </tr>
 </tbody></table>
 
-<table class="pub-item" data-filters="selected 3d4d" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table class="pub-item" data-filters="selected 3d4d simulation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr>
     <td style="padding:20px;width:30%;max-width:30%" align="center">
       <img style="width:100%;max-width:100%" src="assets/imgs/P2P.png" alt="thumb">
@@ -1486,6 +1490,10 @@
             <h2>Talks & Presentations</h2>
             <ul style="padding-left: 0; margin: 0; list-style: none;">
               <li class="talk-item">
+                <b class="talk-year">[10/2026]</b>
+                <span class="talk-body">Invited talk: <em>Definitions of Large Models and Unified Models</em> @ <a href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">Zhejiang University</a></span>
+              </li>
+              <li class="talk-item">
                 <b class="talk-year">[09/2026]</b>
                 <span class="talk-body">Invited talk: <em>Building Robot Foundation Models for the Physical World</em> @ <a href="https://www.nvidia.com/en-us/ai/cosmos/" target="_blank" rel="noopener">NVIDIA Cosmos</a></span>
               </li>
@@ -1546,7 +1554,7 @@
 
 <ul>
     <li>
-        Conference Reviewer: NeurIPS, ICLR, ICML, CVPR, ICCV, ECCV, MM, ICRA, etc.
+        Conference Reviewer/AC: NeurIPS, ICLR, ICML, CVPR, ICCV, ECCV, MM, ICRA, etc.
  </br>
     </li>
 
@@ -1616,7 +1624,8 @@
         mllm: 'llm',
         worldmodel: 'worldmodel',
         robotics: 'robotics',
-        infra: 'infra'
+        infra: 'infra',
+        simulation: 'simulation'
       }[filter];
       window.publicationMap.setTopics(topic ? [topic] : []);
     }

@@ -17,6 +17,7 @@
     llm: {center: [.4, -.15, -.65], radius: [1.8, 3.1, .8]},
     infra: {center: [3.3, 1.1, 1.15], radius: [1.3, 1.5, 1.3]},
     driving: {center: [-1.15, -2, .25], radius: [2.1, 2.1, 1.85]},
+    simulation: {center: [-.2, 1.7, -1.85], radius: [3.4, 1.35, 1.05]},
   };
   // Map-only abbreviations; full titles remain in the inspector and accessible names.
   const abbreviations={
@@ -30,7 +31,7 @@
   const defaultView = {yaw: -.25, pitch: -.2, zoom: 1};
   // A persistent contour parameter for each badge. Never reselect a vertex or
   // an outer slot as the camera turns, including when ellipse axes cross.
-  const topicAngles={"3d":-140,media:-175,llm:-90,infra:-45,embodied:-30,robotics:40,driving:95,worldmodel:130};
+  const topicAngles={"3d":-140,media:-175,llm:-90,infra:-45,embodied:-30,robotics:40,driving:95,worldmodel:130,simulation:165};
   const metric = (point, region) => point.reduce((sum, value, axis) => sum + ((value-region.center[axis])/region.radius[axis])**2, 0);
   const halton = (index, base) => {let value=0, fraction=1;while(index){fraction/=base;value+=fraction*(index%base);index=Math.floor(index/base);}return value;};
   function rotate(point, view) {
@@ -151,7 +152,7 @@
       const angle=topicAngles[group.id]*Math.PI/180;group.labelDirection=[Math.cos(angle),Math.sin(angle)];
       group.scaledRadius2=group.radius.map((r,i)=>(r*axisScale[i])**2);
     }
-    const legendLabels={"3d":"3D Vision / Gen",media:"Image / Video Gen",llm:"LLM / MLLM",embodied:"VLA / Embodied",infra:"Infrastructure",robotics:"Robotics",driving:"Driving",worldmodel:"World Models"};
+    const legendLabels={"3d":"3D Vision / Gen",media:"Image / Video Gen",llm:"LLM / MLLM",embodied:"VLA / Embodied",infra:"Infrastructure",robotics:"Robotics",driving:"Driving",worldmodel:"World Models",simulation:"Simulation"};
     root.querySelector(".map-legend").innerHTML=groups.map(group=>`<span class="map-topic-chip" style="--topic-color:${group.color}" data-topic-chip="${group.id}"><button type="button" data-map-topic="${group.id}" aria-pressed="false" aria-label="选择 ${escape(group.label)}，可多选点亮所有相关论文"><i aria-hidden="true"></i>${escape(legendLabels[group.id]||group.label)}<b>${projects.filter(p=>p.themes.includes(group.id)).length}</b></button><button type="button" data-open-theme="${group.id}" aria-label="打开 ${escape(group.label)} 论文目录">↗</button></span>`).join("");
     root.querySelector(".map-legend").addEventListener("click", event=>{
       const topic=event.target.closest("[data-map-topic]");if(topic)selectTopic(topic.dataset.mapTopic);

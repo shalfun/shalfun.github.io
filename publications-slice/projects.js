@@ -440,7 +440,8 @@ window.PROJECTS = [
     "summary": "构建覆盖仿真与真实环境的通用操作基准，统一比较机器人策略在多任务中的能力。",
     "themes": [
       "embodied",
-      "robotics"
+      "robotics",
+      "simulation"
     ],
     "year": 2026,
     "status": "preprint",
@@ -490,7 +491,8 @@ window.PROJECTS = [
     "summary": "用视觉与触觉共同评测软体物体操作，重点考察受力、安全与物理约束下的策略表现。",
     "themes": [
       "embodied",
-      "robotics"
+      "robotics",
+      "simulation"
     ],
     "year": 2026,
     "status": "preprint",
@@ -1541,7 +1543,8 @@ window.PROJECTS = [
     "shortTitle": "Support-Effective 3D",
     "summary": "通过偏好对齐提升网格生成的可制造性，让文本生成的 3D 模型更适合实际打印。",
     "themes": [
-      "3d"
+      "3d",
+      "simulation"
     ],
     "year": 2025,
     "status": "published",
