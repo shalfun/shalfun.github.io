@@ -1,0 +1,49 @@
+name: Update Google Scholar citations
+
+on:
+  schedule:
+    # 00:20 Asia/Shanghai. The fetch itself runs only after two days.
+    - cron: "20 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Skip when updated within two days
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          last=$(git log -1 --format=%ct -- assets/gs-citations.json || echo 0)
+          now=$(date +%s)
+          if [ $((now - last)) -lt 172800 ]; then
+            echo "last update was within 2 days"
+            echo "due=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "due=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.due == 'true'
+        with:
+          python-version: "3.12"
+      - name: Read citation count
+        if: steps.gate.outputs.due == 'true'
+        run: python3 scripts/update-scholar-citations.py
+      - name: Commit if the count changed
+        if: steps.gate.outputs.due == 'true'
+        run: |
+          git diff --quiet -- assets/gs-citations.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/gs-citations.json
+          git commit -m "chore: refresh Google Scholar citation count"
+          git push
